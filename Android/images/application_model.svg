@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="744.09448819"
+   height="1052.3622047"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.48.1 r9760"
+   sodipodi:docname="application_model.pdf">
+  <defs
+     id="defs4" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.3194245"
+     inkscape:cx="264.3048"
+     inkscape:cy="738.57143"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1280"
+     inkscape:window-height="715"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <rect
+       style="fill:#cccccc;fill-opacity:1;stroke:none"
+       id="rect2985"
+       width="488.15704"
+       height="271.0687"
+       x="83.714287"
+       y="198.07646"
+       ry="22.737186"
+       rx="22.737186" />
+    <text
+       xml:space="preserve"
+       style="font-size:30.22914124px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Ubuntu;-inkscape-font-specification:Ubuntu"
+       x="241.87238"
+       y="231.619"
+       id="text3011"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan3013"
+         x="241.87238"
+         y="231.619">Linux Kernel</tspan></text>
+    <g
+       id="g3823">
+      <g
+         id="g3818">
+        <rect
+           style="fill:#71c837;fill-opacity:1;stroke:none"
+           id="rect3801"
+           width="221.30861"
+           height="224.34024"
+           x="98.527809"
+           y="239.12881"
+           ry="22.737186"
+           rx="22.737186" />
+        <text
+           xml:space="preserve"
+           style="font-size:21.8614006px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
+           x="133.80405"
+           y="263.09656"
+           id="text3015"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             id="tspan3017"
+             x="133.80405"
+             y="263.09656">Linux Process</tspan></text>
+      </g>
+      <g
+         transform="translate(4.1684875,0)"
+         id="g3813">
+        <rect
+           style="fill:#ececec;fill-opacity:1;stroke:none"
+           id="rect3009"
+           width="172.04471"
+           height="175.07634"
+           x="118.99127"
+           y="277.78204"
+           ry="19.705561"
+           rx="19.705561" />
+        <text
+           xml:space="preserve"
+           style="font-size:20.49390411px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
+           x="153.92897"
+           y="300.86469"
+           id="text3019"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             id="tspan3021"
+             x="153.92897"
+             y="300.86469">Dalvik VM</tspan></text>
+      </g>
+      <g
+         transform="translate(-5.6842918,-12.884406)"
+         id="g3803">
+        <rect
+           style="fill:#ffffff;fill-opacity:1;stroke:none"
+           id="rect3031"
+           width="115.95965"
+           height="112.92802"
+           x="156.88658"
+           y="322.49847"
+           ry="19.705561"
+           rx="19.705561" />
+        <g
+           id="g3003"
+           transform="matrix(0.69101626,0,0,0.69101626,189.4415,348.83048)">
+          <path
+             id="path2989"
+             d="m 21.481,0.65239 4.062,7.0627 c -7.394,3.6269 -12.406,10.728 -12.406,18.875 h 23.656 23.656 c 0,-8.1468 -5.012,-15.248 -12.406,-18.875 l 4.063,-7.0626 c 0,0 0.19231,-0.37509 -0.17225,-0.58569 -0.365,-0.21059 -0.61,0.14869 -0.61,0.14869 l -4.125,7.1248 c -3.141,-1.3979 -6.6721,-2.1875 -10.406,-2.1875 -3.7341,0 -7.2653,0.7896 -10.406,2.1875 l -4.125,-7.1248 c 0,0 -0.23006,-0.35939 -0.59737,-0.14971 -0.368,0.20967 -0.184,0.58671 -0.184,0.58671 z m 4.062,13.68 c 1.2395,0 2.25,1.0105 2.25,2.25 -10e-6,1.2395 -1.0105,2.2188 -2.25,2.2188 -1.2395,0 -2.25,-0.97928 -2.25,-2.2188 0,-1.23952 1.0105,-2.25 2.25,-2.25 z m 22.5,0 c 1.2395,0 2.25,1.0105 2.25,2.25 -10e-6,1.2395 -1.0105,2.2188 -2.25,2.2188 -1.2395,0 -2.25,-0.97928 -2.25,-2.2188 0,-1.23952 1.0105,-2.25 2.25,-2.25 z"
+             inkscape:connector-curvature="0"
+             style="fill:#a4c639" />
+          <path
+             id="path2991"
+             d="m 12.947,29.344 0,35.893 c 0,1.7807 2.1523,4.1116 3.933,4.1116 h 5.6295 v 12.237 c 0,3.1162 2.2691,5.625 5.0938,5.625 2.8246,0 5.0938,-2.5088 5.0938,-5.625 v -12.237 h 8.1875 v 12.237 c 0,3.1162 2.2691,5.625 5.0938,5.625 2.8246,0 5.125,-2.5088 5.125,-5.625 v -12.237 h 5.5982 c 1.7807,0 3.933,-2.3309 3.933,-4.1116 V 29.344 h -47.688 z"
+             inkscape:connector-curvature="0"
+             style="fill:#a4c639" />
+          <rect
+             id="rect2993"
+             x="0"
+             y="28.593"
+             width="10.197"
+             height="32.544998"
+             ry="8.1401844"
+             rx="8.1401844"
+             style="fill:#a4c639" />
+          <rect
+             id="rect2995"
+             x="63.389999"
+             y="28.593"
+             width="10.197"
+             height="32.544998"
+             ry="8.1401844"
+             rx="8.1401844"
+             style="fill:#a4c639" />
+        </g>
+        <text
+           xml:space="preserve"
+           style="font-size:15.83519745px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
+           x="166.45616"
+           y="345.07327"
+           id="text3023"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             id="tspan3025"
+             x="166.45616"
+             y="345.07327">Android App</tspan></text>
+      </g>
+    </g>
+    <g
+       id="g3842"
+       transform="translate(234.95093,0)">
+      <g
+         id="g3844">
+        <rect
+           rx="22.737186"
+           ry="22.737186"
+           y="239.12881"
+           x="98.527809"
+           height="224.34024"
+           width="221.30861"
+           id="rect3846"
+           style="fill:#71c837;fill-opacity:1;stroke:none" />
+        <text
+           sodipodi:linespacing="125%"
+           id="text3848"
+           y="263.09656"
+           x="133.80405"
+           style="font-size:21.8614006px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
+           xml:space="preserve"><tspan
+             y="263.09656"
+             x="133.80405"
+             id="tspan3850"
+             sodipodi:role="line">Linux Process</tspan></text>
+      </g>
+      <g
+         id="g3852"
+         transform="translate(4.1684875,0)">
+        <rect
+           rx="19.705561"
+           ry="19.705561"
+           y="277.78204"
+           x="118.99127"
+           height="175.07634"
+           width="172.04471"
+           id="rect3854"
+           style="fill:#ececec;fill-opacity:1;stroke:none" />
+        <text
+           sodipodi:linespacing="125%"
+           id="text3856"
+           y="300.86469"
+           x="153.92897"
+           style="font-size:20.49390411px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
+           xml:space="preserve"><tspan
+             y="300.86469"
+             x="153.92897"
+             id="tspan3858"
+             sodipodi:role="line">Dalvik VM</tspan></text>
+      </g>
+      <g
+         id="g3860"
+         transform="translate(-5.6842918,-12.884406)">
+        <rect
+           rx="19.705561"
+           ry="19.705561"
+           y="322.49847"
+           x="156.88658"
+           height="112.92802"
+           width="115.95965"
+           id="rect3862"
+           style="fill:#ffffff;fill-opacity:1;stroke:none" />
+        <g
+           transform="matrix(0.69101626,0,0,0.69101626,189.4415,348.83048)"
+           id="g3864">
+          <path
+             style="fill:#a4c639"
+             inkscape:connector-curvature="0"
+             d="m 21.481,0.65239 4.062,7.0627 c -7.394,3.6269 -12.406,10.728 -12.406,18.875 h 23.656 23.656 c 0,-8.1468 -5.012,-15.248 -12.406,-18.875 l 4.063,-7.0626 c 0,0 0.19231,-0.37509 -0.17225,-0.58569 -0.365,-0.21059 -0.61,0.14869 -0.61,0.14869 l -4.125,7.1248 c -3.141,-1.3979 -6.6721,-2.1875 -10.406,-2.1875 -3.7341,0 -7.2653,0.7896 -10.406,2.1875 l -4.125,-7.1248 c 0,0 -0.23006,-0.35939 -0.59737,-0.14971 -0.368,0.20967 -0.184,0.58671 -0.184,0.58671 z m 4.062,13.68 c 1.2395,0 2.25,1.0105 2.25,2.25 -10e-6,1.2395 -1.0105,2.2188 -2.25,2.2188 -1.2395,0 -2.25,-0.97928 -2.25,-2.2188 0,-1.23952 1.0105,-2.25 2.25,-2.25 z m 22.5,0 c 1.2395,0 2.25,1.0105 2.25,2.25 -10e-6,1.2395 -1.0105,2.2188 -2.25,2.2188 -1.2395,0 -2.25,-0.97928 -2.25,-2.2188 0,-1.23952 1.0105,-2.25 2.25,-2.25 z"
+             id="path3866" />
+          <path
+             style="fill:#a4c639"
+             inkscape:connector-curvature="0"
+             d="m 12.947,29.344 0,35.893 c 0,1.7807 2.1523,4.1116 3.933,4.1116 h 5.6295 v 12.237 c 0,3.1162 2.2691,5.625 5.0938,5.625 2.8246,0 5.0938,-2.5088 5.0938,-5.625 v -12.237 h 8.1875 v 12.237 c 0,3.1162 2.2691,5.625 5.0938,5.625 2.8246,0 5.125,-2.5088 5.125,-5.625 v -12.237 h 5.5982 c 1.7807,0 3.933,-2.3309 3.933,-4.1116 V 29.344 h -47.688 z"
+             id="path3868" />
+          <rect
+             style="fill:#a4c639"
+             rx="8.1401844"
+             ry="8.1401844"
+             height="32.544998"
+             width="10.197"
+             y="28.593"
+             x="0"
+             id="rect3870" />
+          <rect
+             style="fill:#a4c639"
+             rx="8.1401844"
+             ry="8.1401844"
+             height="32.544998"
+             width="10.197"
+             y="28.593"
+             x="63.389999"
+             id="rect3872" />
+        </g>
+        <text
+           sodipodi:linespacing="125%"
+           id="text3874"
+           y="345.07327"
+           x="166.45616"
+           style="font-size:15.83519745px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Verdana;-inkscape-font-specification:Verdana"
+           xml:space="preserve"><tspan
+             y="345.07327"
+             x="166.45616"
+             id="tspan3876"
+             sodipodi:role="line">Android App</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>

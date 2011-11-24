@@ -1,0 +1,46 @@
+\documentclass{beamer}
+\usetheme[bullet=circle,% Use circles instead of squares for bullets.
+          titleline=true,% Show a line below the frame title.
+          alternativetitlepage=true,% Use the fancy title page.
+          titlepagelogo=android-logo,% Logo for the first page.
+          watermark=android-watermark,% Watermark used in every page.
+          watermarkheight=100px,% Height of the watermark.
+          watermarkheightmult=4,% The watermark image is 4 times bigger
+                                % than watermarkheight.
+          ]{Torino}
+\usepackage{bold-extra}
+\usepackage{listings}
+
+\lstset{language=Java,captionpos=b,
+tabsize=4,frame=lines,
+basicstyle=\scriptsize\ttfamily,
+keywordstyle=\color{blue},
+commentstyle=\color{lightgray},
+stringstyle=\color{violet},
+breaklines=true,showstringspaces=false}
+\author[M.Sc. R. Stojanov \and M.Sc. T. Delev]{M.Sc. Riste Stojanov \and
+M.Sc.Tomche Delev}
+\title{Android Application Development}
+\institute{Faculty of computer science and engineering - Skopje}
+\date{October 11, 2011}
+
+\begin{document}
+\AtBeginSection[]
+{
+  \frame<handout:0>
+  {
+    \frametitle{Outline Day 1}
+    \tableofcontents[currentsection,hideallsubsections]
+  }
+}
+\AtBeginSubsection[]
+{
+  \frame<handout:0>
+  {
+    \frametitle{Outline Day 1}
+    \tableofcontents[sectionstyle=show/hide,subsectionstyle=show/shaded/hide]
+  }
+}
+
+\include{d1.content}
+\end{document}

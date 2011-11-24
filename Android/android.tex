@@ -1,0 +1,37 @@
+\documentclass{beamer}
+\usetheme[bullet=circle,% Use circles instead of squares for bullets.
+          titleline=true,% Show a line below the frame title.
+          alternativetitlepage=true,% Use the fancy title page.
+          titlepagelogo=android-logo,% Logo for the first page.
+          watermark=android-watermark,% Watermark used in every page.
+          watermarkheight=100px,% Height of the watermark.
+          watermarkheightmult=4,% The watermark image is 4 times bigger
+                                % than watermarkheight.
+          ]{Torino}
+
+\author{Tomche Delev}
+\title{Android theme for \LaTeX{} Beamer}
+\institute{Faculty of computer science and engineering - Skopje}
+\date{October 11, 2011}
+
+\begin{document}
+\AtBeginSection[]
+{
+  \frame<handout:0>
+  {
+    \frametitle{Содржина}
+    \tableofcontents[currentsection,hideallsubsections]
+  }
+}
+
+\AtBeginSubsection[]
+{
+  \frame<handout:0>
+  {
+    \frametitle{Содржина}
+    \tableofcontents[sectionstyle=show/hide,subsectionstyle=show/shaded/hide]
+  }
+}
+\include{content}
+\end{document}
+
