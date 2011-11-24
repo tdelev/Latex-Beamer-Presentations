@@ -1,0 +1,13 @@
+#TeXlipse project settings
+#Mon Nov 21 00:47:36 CET 2011
+builderNum=2
+outputDir=out
+makeIndSty=
+bibrefDir=
+outputFormat=pdf
+tempDir=tmp
+mainTexFile=krs_av7.tex
+outputFile=krs_av7.pdf
+langSpell=en
+markDer=true
+srcDir=

@@ -1,0 +1,328 @@
+
+\usetheme{FINKI}
+\usepackage{thumbpdf}
+\usepackage{wasysym}
+\usepackage{ucs}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+\usepackage{verbatim}
+\usepackage{listings}
+%\renewcommand*\ttdefault{lcmtt}
+
+\pdfinfo
+{
+  /Title       (KRS)
+  /Creator     (TeX)
+  /Author      (Tomche Delev)
+}
+
+
+\title[АВ6]{Аудиториски вежби 6}
+\subtitle{Вектори и матрици}
+\author{Концепти за развој на софтвер}
+\date{}
+\pgfdeclareimage[width=0.6\paperwidth]{finki_logo}{finki_name}
+\titlegraphic{\pgfuseimage{finki_logo}}
+
+
+
+\begin{document}
+
+\frame[plain]{\titlepage}
+
+%Automatic table of contents
+\section*{}
+\begin{frame}
+  \frametitle{Содржина}
+  \tableofcontents[section=1,hidesubsections]
+\end{frame}
+
+\AtBeginSection[]
+{
+  \frame<handout:0>
+  {
+    \frametitle{Содржина}
+    \tableofcontents[currentsection,hideallsubsections]
+  }
+}
+
+\AtBeginSubsection[]
+{
+  \frame<handout:0>
+  {
+    \frametitle{Outline}
+    \tableofcontents[sectionstyle=show/hide,subsectionstyle=show/shaded/hide]
+  }
+}
+
+\newcommand<>{\highlighton}[1]{%
+  \alt#2{\structure{#1}}{{#1}}
+}
+
+\newcommand{\icon}[1]{\pgfimage[height=1em]{#1}}
+
+\lstset{language=C,captionpos=b,
+tabsize=4,frame=lines,
+basicstyle=\tiny\ttfamily,
+keywordstyle=\color{blue},
+%numbers=left,
+%numberstyle=\tiny,
+commentstyle=\color{lightgray},
+stringstyle=\color{violet},
+breaklines=true,showstringspaces=false}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Content starts here %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Вектори (еднодимензионални полиња)}
+
+\begin{frame}[fragile]{Задачa 1}
+Да се напише програма која за две низи кои се внесуваат од тастатура ќе провери
+дали дали се еднакви или не. На екран да се испачати резултатот од споредбата.\\
+Максимална големина на низите е 100.
+\pause
+\begin{exampleblock}{Решение 1 дел}
+\begin{lstlisting}
+#include<stdio.h>
+#define MAX 100
+int main() {
+    int n1, n2, element, i;
+    int a[MAX], b[MAX];
+    printf("Golemina na prvata niza:  ");
+    scanf("%d", &n1);
+    printf("Golemina na vtorata niza:  ");
+    scanf("%d", &n2);
+    if(n1 != n2)
+        printf("Nizite ne se ednakvi\n");
+\end{lstlisting}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Задача 1}{Решение 2 дел}
+\begin{exampleblock}{Решение 2 дел}
+\begin{lstlisting}
+    else {
+        printf("Vnesi gi elementite od prvata niza: \n");
+        for(i = 0; i < n1; ++i) {
+            printf("a[%d] = ", i);
+            scanf("%d", &a[i]);
+        }
+        printf("Vnesi gi elementite od vtorata niza: \n");
+        for(i = 0; i < n2; ++i) {
+            printf("b[%d] = ", i);            
+            scanf("%d", &b[i]);
+        }
+        //proverka dali nizite se ednakvi:
+        for(i = 0; i < n1; ++i)
+            if(a[i] != b[i])
+                break;
+        if(i == n1)
+            printf("Nizite se ednakvi \n");
+        else
+            printf("Nizite ne se ednakvi \n");    
+    }
+    return 0;
+}
+\end{lstlisting}
+\end{exampleblock}
+\end{frame}
+
+
+\begin{frame}{Задачa 2}
+Да се напише програма која за низа, чии што елементи се внесуваат од тестатура, ќе го пресмета збирот на парните елементи, 
+збирот на непарните елементи, како и односот помеѓу бројот на парни и непарни елементи. Резултатот да се испечати на екран.
+\begin{exampleblock}{Пример}
+За низата:\\
+\texttt{3 {\color{red}2} 7 {\color{red}6} {\color{red}2} 5 1}\\
+На екран ќе се испечати: \\
+\texttt{suma\_parni = 8}\\
+\texttt{suma\_neparni = 16}\\
+\texttt{odnos = 0.75}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Задачa 2}{Решение} 
+\begin{exampleblock}{Решение}
+\begin{lstlisting}
+#include <stdio.h>
+#define MAX 100
+int main() {
+    int i, n, a[MAX], brNep = 0, brPar = 0, sumNep = 0, sumPar = 0;
+    printf("Vnesi ja goleminata na nizata: \n");
+    scanf("%d", &n);
+    printf("Vnesi gi elementite od nizata: \n");
+    for(i = 0; i < n; ++i)
+        scanf("%d", &a[i]);
+    for(i = 0; i < n; ++i) {
+        if(a[i] % 2) {
+            brNep++;
+            sumNep += a[i];
+        } else {
+            brPar++;
+            sumPar += a[i];
+        }
+    }
+    printf("Sumata na parni elementi: %d\nSumata na neparni elementi: %d\n", sumPar, sumNep);
+    printf("Odnosot na parnite so neparnite elementi e %.2f\n", (float)brPar / brNep);
+    return 0;
+}
+\end{lstlisting}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}{Задачa 3}
+Да се напише програма која ќе го пресмета скаларниот производ на два вектори со по n координати. 
+Бројот на координати n, како и координатите на векторите се внесуваат од
+тестатура. Резултатот да се испечати на екран.
+\end{frame}
+
+\begin{frame}[fragile]{Задача 3}{Решение} 
+\begin{exampleblock}{Решение}
+\begin{lstlisting}
+#include<stdio.h>
+#define MAX 100
+int main() {
+    int a[MAX], b[MAX], n, i, scalar = 0;
+    printf("Vnesi ja goleminata na vektorite: ");
+    scanf("%d", &n);
+    printf("Vnesi gi koordinatite na prviot vector: \n");
+    for(i = 0; i < n; ++i)
+        scanf("%d", &a[i]);
+    printf("Vnesi gi koordinatite na vtoriot vector: \n");
+    for(i = 0; i < n; ++i)
+        scanf("%d", &b[i]);
+    for(i = 0; i < n; ++i)
+        scalar += a[i] * b[i];
+    printf("Scalarniot proizvod na vektorite e: %d\n", scalar);
+    return 0;
+}
+\end{lstlisting}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}{Задачa 4}
+Да се напише програма која ќе провери дали дадена низа од n елементи која се
+внесува од тастатура е строго растечка, строго опаѓачка или ниту строго растечка
+ниту строго опаѓачка. Резултатот да се испечати на екран.
+\end{frame}
+
+\begin{frame}[fragile,shrink=10]{Задача 4}{Решение} 
+\begin{exampleblock}{Решение}
+\begin{lstlisting}
+#include <stdio.h>
+#define MAX 100
+int main() {
+    int n, element, a[MAX], i;
+    short rastecka = 1, opagacka = 1;
+    printf("Vnesi ja goleminata na nizata: \n");
+    scanf("%d", &n);
+    printf("Vnesi gi elementite od nizata: \n");
+    for(i = 0; i < n; ++i)
+        scanf("%d",&a[i]);
+    for(i = 0; i< n-1; ++i) {
+        if(a[i] >= a[i+1]) {
+            rastecka = 0;
+            break;
+        }
+    }    
+    for(i = 0; i < n-1; ++i) {
+        if(a[i] <= a[i+1]) {
+            opagacka = 0;
+            break;
+        }
+    }
+    if(!opagacka && !rastecka)
+        printf("Nizata ne e nitu strogo rastecka nitu strogo opagacka \n");
+    else if(opagacka)
+        printf("Nizata e strogo opagacka \n");
+    else if(rastecka)
+        printf("Nizata e strogo rastecka \n");
+    return 0;
+}
+\end{lstlisting}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}{Задачa 5}
+Да се напише програма која што ќе ги избрише дупликатите од една низа. На крај,
+да се испечати на екран новодобиената низа. Елементите од низата се внесуваат од тестатура.
+\end{frame}
+
+\begin{frame}[fragile]{Задача 5}{Решение} 
+\begin{exampleblock}{Решение}
+\begin{lstlisting}
+#include <stdio.h>
+#define MAX 100
+int main() {
+    int a[MAX], n, i, j, k, izbrisani = 0;
+    printf("Vnesi ja goleminata na nizata: \n");
+    scanf("%d", &n);
+    printf("Vnesi gi elementite od nizata: \n");
+    for(i = 0; i < n; ++i)
+        scanf("%d",&a[i]);
+    for(i = 0; i < n - izbrisani; ++i)
+        for(j = i + 1; j < n - izbrisani; ++j)
+            if(a[i] == a[j]) {
+                for(k = j; k < n - 1 - izbrisani; ++k)
+                    a[k] = a[k + 1];
+                izbrisani++;
+            }
+    n -= izbrisani;
+    printf("Rezultantnata niza e: \n");
+    for(i = 0; i < n; ++i)
+        printf("%d\t", a[i]);
+    return 0;
+}
+\end{lstlisting}
+\end{exampleblock}
+\end{frame}
+
+\section{Матрици (дводимензионални полиња)}
+
+\begin{frame}{Задачa 6}
+Да се напише програма која ќе испечати на екран дали дадена матрица е симетрична во однос на главната дијагонала. 
+Димензиите и елементите на матрицата се внесуваат од тестатура.
+\end{frame}
+
+\begin{frame}[fragile]{Задача 6}{Решение} 
+\begin{exampleblock}{Решение}
+\begin{lstlisting}
+#include <stdio.h>
+#define MAX 100
+int main() {
+    int a[MAX][MAX], n, i, j;
+    printf("Vnesi dimenzii na matricata: \n");
+    scanf("%d", &n);
+    printf("Vnesi gi elementite na matricata: \n");
+    for(i = 0; i < n; ++i)
+        for(j = 0; j < n; ++j)
+            scanf("%d", &a[i][j]);
+    for(i = 0; i < n - 1; ++i) {
+        for(j = i + 1; j < n; ++j)
+            if(a[i][j] != a[j][i])
+                break;
+        if(i != j) break;
+    }
+    if(i == j)
+        printf("Matricata e simetricna vo odnos na glavnata dijagonala\n");
+    else
+        printf("Matricata ne e simetricna vo odnos na glavnata dijagonala\n");
+    return 0;
+}
+\end{lstlisting}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}{Материјали}{}
+	Предавања, аудиториски вежби, соопштенија\\
+	\href{http://courses.finki.ukim.mk/}{\textbf{courses.finki.ukim.mk}}
+	\vfill
+	Изворен код на сите примери и задачи\\
+	\href{http://bitbucket.org/tdelev/finki-krs/}{\textbf{bitbucket.org/tdelev/finki-krs}}
+	\vfill
+	{\Huge Прашања ?}
+\end{frame}
+
+\end{document}
