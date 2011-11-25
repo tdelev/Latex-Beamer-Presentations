@@ -1,0 +1,57 @@
+\documentclass{beamer}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{verbatim}
+
+\usetheme[bullet=circle,% Use circles instead of squares for bullets.
+          titleline=true,% Show a line below the frame title.
+          alternativetitlepage=true,% Use the fancy title page.
+          titlepagelogo=finki_logo,% Logo for the first page.
+          watermark=finki_watermark,% Watermark used in every page.
+          watermarkheight=50px,% Height of the watermark.
+          watermarkheightmult=4,% The watermark image is 4 times bigger
+                                % than watermarkheight.
+          ]{FINKI2}
+          
+\author[АВ2]{М-р Ѓорѓи Маџаров\\М-р Томче Делев}
+\title[Структурирано програмирање]{Аудиториски вежби 2}
+\subtitle{Вовед во програмскиот јазик C\linebreak Структура на програма,
+променливи, константи, оператори\linebreak Приказ на податоци}
+\institute{Структурирано програмирање}
+\date{Факултет за информатички науки и компјутерско инженерство - Скопје 2011}
+
+
+\begin{document}
+
+\lstset{language=C,captionpos=b,
+tabsize=4,frame=lines,
+basicstyle=\scriptsize\ttfamily,
+keywordstyle=\color{blue},
+commentstyle=\color{lightgray},
+stringstyle=\color{violet},
+breaklines=true,showstringspaces=false}
+
+\frame[t,plain]{\titlepage}
+
+\AtBeginSection[]
+{
+  \frame<handout:0>
+  {
+    \frametitle{Содржина}
+    \tableofcontents[currentsection,hideallsubsections]
+  }
+}
+
+\AtBeginSubsection[]
+{
+  \frame<handout:0>
+  {
+    \frametitle{Содржина}
+    \tableofcontents[sectionstyle=show/hide,subsectionstyle=show/shaded/hide]
+  }
+}
+
+\include{sp_av2.content.tex}
+\end{document}
+

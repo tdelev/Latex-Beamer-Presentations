@@ -1,0 +1,61 @@
+\documentclass[12pt,a4paper]{exam}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{color}
+
+\lstset{language=C,captionpos=b,
+tabsize=4,frame=lines,
+basicstyle=\ttfamily,
+keywordstyle=\color{blue},
+commentstyle=\color{lightgray},
+stringstyle=\color{red},
+breaklines=true,showstringspaces=false}
+
+\begin{document}
+\pagestyle{headandfoot}
+\header{\textbf{ФИНКИ\\Структурирано
+програмирање}}{}{\large{\textbf{Лабораториска вежба 6}}}
+\headrule
+\cfoot{Страна \thepage}
+\begin{center}
+\Large{\textbf{Низи}}
+\end{center}
+\begin{questions}
+
+\question
+За внесена низа од N (максимум 100) елементи да се пресмета  и отпечати
+просекот на првата и на втората половина на низата. Втората половина на низата
+започнува од индекс $i = N / 2$.
+\\\emph{На пример}:\\
+\texttt{1 5 6 8 11 3 6}\\ 
+Prva polovina: \texttt{4}\\
+Vtora polovina: \texttt{7}
+
+\question
+За внесена низа од N (максимум 100) елементи кои претставуваат висини на патека
+за пешачење да се пресмета вкупното искачување/симнување. Притоа искачувањето се
+множи со 2. 
+\\\emph{На пример}:\\
+\texttt{10 14 8 6 15}\\
+\texttt{2 * 4 + 6 + 2 + 2 * 9 = 34}
+
+\question
+Внесена низа од N (максимум 100) елементи да се трансформира на тој начин што
+секоја 0 ќе се замени со најголемиот непарен елемент десно од нулата во
+остатокот од низата. Ако не постои непарен елемент во остатокот од низата нулата
+си останува.\\\emph{На пример}:\\
+\texttt{3 0 4 11 0 5 0 2}\\
+\texttt{2 11 4 11 5 5 0 2}
+
+\question
+За внесен природен број N пополнете низа со N * N елементи на следниот начин. За
+внесено N = 3 се добива \texttt{0 0 1, 0 2 1, 3 2 1} (Запирките се ставени за
+логички да ги одвојат групите на елементи). \\\emph{Пример за 2}:\\
+\texttt{0 1 2 1}
+
+\end{questions}
+\end{document}

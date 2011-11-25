@@ -1,0 +1,116 @@
+\documentclass[12pt,a4paper]{exam}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{color}
+
+\lstset{language=C,captionpos=b,
+tabsize=4,frame=lines,
+basicstyle=\ttfamily,
+keywordstyle=\color{blue},
+commentstyle=\color{lightgray},
+stringstyle=\color{red},
+breaklines=true,showstringspaces=false}
+
+\begin{document}
+\pagestyle{headandfoot}
+\header{\textbf{ФИНКИ\\Структурирано програмирање}}{}{\large{\textbf{Лабораториска вежба 1}}}
+\headrule
+\cfoot{Страна \thepage}
+\begin{center}
+\Large{\textbf{Променливи, операции, влез и излез на податоци}}
+\end{center}
+\begin{questions}
+\question
+Креирање на прв проект во CodeBlocks
+\begin{enumerate}
+\item Овторете ја апликацијата \textbf{Code::Blocks IDE}
+\item Креирајте нов проект \textbf{(File->New->Project...) / (Create new project)}.
+\item Од понудените категории изберете \textbf{"Empty project"}.
+\item Именувајте го проектот како \textbf{"KRS{indeks}-{lab}-{zadaca}"} Пример. KRS113001-1-1 и сместете го во директориумот "My Documents\textbackslash KRS" кој ако не е креиран го креирате.
+\item На следниот поглед за опцијата компајлер треба да ви е избран "GNU GCC Compiler" и да се избрани опциите за "Create debug configuration" и "Create release configuration" (Ова треба да се стандардните опции).
+\item Во вака креираниот проект додадете нова датотека \textbf{File->New file...} Изберете C/C++ source тип на датотека и изберете \textbf{C} како програмски јазик.
+\item На следниот поглед кликнете на \textbf{...} и внесете име на изворната датотека. Потоа треба да е избрано "Add file to active project In build target(s)" \textbf{Debug} и \textbf{Release} (All->Finish).
+\end{enumerate}
+\question
+Пишување и извршување на првата C програма
+\begin{enumerate}
+\item Во текстуалниот уредувач внесете го следниот изворен код:
+\begin{lstlisting}
+#include <stdio.h>
+
+int main() {
+    int a, b;
+    printf("a = ");
+    scanf("%d", &a);
+    printf("b = ");
+    scanf("%d", &b);
+    printf("a + b = %d\n", a + b);
+    printf("a - b = %d\n", a - b);
+    printf("a * b = %d\n", a * b);
+    printf("a / b = %d\n", a / b);
+    printf("a %% b = %d\n", a % b);
+    return 0;
+}
+\end{lstlisting}
+\item Извршете ја програмата со избор на \textbf{"Build->Build and run" (F9)}
+\item Внесете вредности во конзолата и тестирајте ја програмата.
+\end{enumerate}
+
+\question
+Креирајте втор проект според упатството од претходната задача (KRSbr\_indeks12) и внесете го следниот изворен код за пресметување на индекс на телесна маса. Извршете ја и тестирајте ја програмата за вашите податоци.
+\begin{lstlisting}
+#include <stdio.h>
+int main() {
+    float masa, visina;
+    printf("Vnesete visina(cm): ");
+    scanf("%f", &visina);
+    printf("Vnesete tezhina(kg): ");
+    scanf("%f", &masa);
+    visina /= 100;
+    float bmi = masa / (visina * visina);
+    printf("Vasiot BMI e: %.2f\n", bmi);
+    return 0;
+}
+\end{lstlisting}
+
+\question
+Да се напише програма која за даден цел број секунди кој се внесува од тастатура, ќе ги отпечати на екран соодветните вредности во часови, минути и секунди.
+\\На пример:\\
+\texttt{7555}\\
+\texttt{7555 sekundi se 2 casovi, 5 minuti i 55 sekundi}
+
+\question
+Напишете ја следната програма:
+\begin{lstlisting}
+#include <stdio.h>
+int main() {
+    int d; char c;
+    printf("Vnesete eden broj i eden znak: ");
+    scanf("%d", &d);
+    scanf("%c", &c);
+    printf("%d%c", d, c);
+    int i = 7;
+    scanf("%d", &i);
+    int n = (((++i < 7) && (i++ / 6)) || (++i <= 9));
+    printf("%d\n", n);
+}
+\end{lstlisting}
+Внесете ги следните вредности\\
+\texttt{"5 t", "78x"}\\
+и дискутирајте го излезот од програмата. Што се случува со знакот \texttt{t} во првиот пример?
+
+\question
+Да се напише програма која за внесен знак од тастатура ќе отпечати на екран неговиот ASCII код, како и знаците лево и десно од него во табелата на ASCII знаци.
+
+\question
+\textbf{Бонус:} Да се напише програма која за два знаци внесени од тастатура (цифри од 0 - 9) ќе го отпечати на екран производот на нивните вредности.\\
+Пример:
+За внесени знаци \texttt{'8' '3'} се печати \texttt{24}\\
+\textbf{Помош:} Соодветните знаци за цифрите треба да се претворат во соодвтените целобројни вредности.
+
+\end{questions}
+\end{document}

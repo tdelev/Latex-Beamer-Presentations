@@ -1,0 +1,41 @@
+\documentclass{beamer}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usetheme[bullet=circle,% Use circles instead of squares for bullets.
+          titleline=true,% Show a line below the frame title.
+          alternativetitlepage=true,% Use the fancy title page.
+          titlepagelogo=finki_logo,% Logo for the first page.
+          watermark=finki_watermark,% Watermark used in every page.
+          watermarkheight=50px,% Height of the watermark.
+          watermarkheightmult=4,% The watermark image is 4 times bigger
+                                % than watermarkheight.
+          ]{FINKI2}
+
+\author[TD]{Tomche Delev}
+\title{ФИНКИ 2 Темплејт за \LaTeX{} Beamer}
+\institute{Faculty of computer science and engineering - Skopje}
+\date{October 11, 2011}
+
+
+\begin{document}
+\AtBeginSection[]
+{
+  \frame<handout:0>
+  {
+    \frametitle{Содржина}
+    \tableofcontents[currentsection,hideallsubsections]
+  }
+}
+
+\AtBeginSubsection[]
+{
+  \frame<handout:0>
+  {
+    \frametitle{Содржина}
+    \tableofcontents[sectionstyle=show/hide,subsectionstyle=show/shaded/hide]
+  }
+}
+
+\include{content.tex}
+\end{document}
+

@@ -1,0 +1,188 @@
+\begin{frame}[fragile]{Задачa 1}
+Да се напише програма во која од тастатура се внесува матрица со димензии MxN (M
+и N не се поголеми од 100). Програмата треба да ја трансформира матрицата на тој
+начин што секој од секој број ќе го одземе просекот (средната вредност) на
+редицата во која припаѓа тој број.
+\begin{exampleblock}{Пример}
+\[
+ \begin{matrix}
+  4 & 2 & 7 & 11 & (6) \\
+  3 & 8 & 16 & 1 & (7) \\
+  17 & 8 & 9 & 5 & (9.75) \\
+  6 & 14 & 4 & 7 & (7.75)
+ \end{matrix}
+ \Longrightarrow
+ \begin{matrix}
+ -2 & -4 & 1 & 5\\
+ -4 & 8 & 16 & 1\\
+ 7.25 & -1.75 & -0.75 & -4.75\\
+ 1.75 & 6.25 & -3.75 & -0.75
+ \end{matrix}
+\]
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Задачa 1}{Решение}
+\begin{columns}
+\column{.5\textwidth}
+    \begin{lstlisting}
+#include <stdio.h>
+#define MAX 100
+int main() {
+    int a[MAX][MAX], M, N, i, j;
+    int suma[MAX];
+    printf("Vnesete M i N: \n");
+    scanf("%d %d", &M, &N);
+    printf("Vnesete ja matricata: \n");
+    for (i = 0; i < M; i++) {
+        suma[i] = 0;
+        for (j = 0; j < N; j++) {
+            printf("a[%d][%d] = ", i, j);
+            scanf("%d", &a[i][j]);
+        }
+    }
+    for (i = 0; i < M; i++) {
+        for (j = 0; j < N; j++) {
+            suma[i] += a[i][j];
+        }
+        for (j = 0; j < N; j++) {
+            a[i][j] -= suma[i] * 1.0 / N;
+        }
+    }
+\end{lstlisting}    
+    \column{.5\textwidth}
+\begin{lstlisting}
+    printf("Rezultantnata matrica e: \n");
+    for (i = 0; i < M; i++) {
+        for (j = 0; j < N; j++) {
+            printf("%d\t", a[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+\end{lstlisting}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Задачa 2}
+Да се напише програма во која од тастатура се внесува матрица со димензии M и
+N. Да се пресмета збирот на сите елементи чии што збир на соседи по хоризонтала
+е поголем од збирот на соседите по вертикала на тој елемент. Максимална големина
+на матриците е 100 x 100.
+\begin{exampleblock}{Пример}
+\[
+ \begin{matrix}
+  4 & \color{red}{2} & 7 & 11 \\
+  \color{blue}{3} & \textbf{8} & \color{blue}{16} & 1 \\
+  17 & \color{red}{8} & 9 & 5 \\
+  6 & 14 & 4 & 7
+ \end{matrix}
+\]
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile,shrink=5]{Задача 2}{Решение}
+\begin{lstlisting}
+#include <stdio.h>
+#define MAX 100
+int main() {
+    int a[MAX][MAX], M, N, i, j;
+    int suma = 0;
+    printf("Vnesete M i N: \n");
+    scanf("%d %d", &M, &N);
+    printf("Vnesete ja matricata: \n");
+    for (i = 0; i < M; i++) {
+        for (j = 0; j < N; j++) {
+            printf("a[%d][%d] = ", i, j);
+            scanf("%d", &a[i][j]);
+        }
+    }
+    for (i = 0; i < M; i++) {
+        for (j = 0; j < N; j++) {
+            int sh = 0;
+            int sv = 0;
+            if(j > 0) sh += a[i][j - 1];
+            if(j < N - 1) sh += a[i][j + 1];
+            if(i > 0) sv += a[i - 1][j];
+            if(i < M - 1) sv += a[i + 1][j];
+            if(sh > sv) suma += a[i][j];
+        }
+    }
+    printf("Sumata e: %d\n", suma);
+    return 0;
+}
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Задачa 3}
+Да се напише програма во која се внесува квадратна матрица од цели броеви со
+непарен број на редици и колони. Матрицата да се иземни на таков начин што
+елементите од главната и споредната дијагонала симетрично ќе се пресликаат во
+однос на централниот елемент на матрицата. На крај да се отпечати променетата
+матрица.
+\begin{exampleblock}{Пример}
+\[
+ \begin{matrix}
+ \color{red}{3} & 4 & 5 & 6 & 7\\ 
+ 1 & \color{red}{2} & 3 & 6 & 4\\
+ 4 & 2 & \color{green}{7} & 9 & 1\\
+ 1 & 9 & 0 & \color{blue}{3} & 5\\ 
+ 4 & 6 & 2 & 8 & \color{blue}{1}
+ \end{matrix}
+ \Longrightarrow
+ \begin{matrix}
+    \color{blue}{1} & 4 & 5 & 6 & 4\\ 
+    1 & \color{blue}{3} & 3 & 9 & 4\\
+    4 & 2 & \color{green}{7} & 9 & 1\\
+    1 & 6 & 0 & \color{red}{2} & 5\\ 
+    7 & 6 & 2 & 8 & \color{red}{3}
+ \end{matrix}
+\]
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile,shrink=5]{Задача 3}{Решение}
+\begin{lstlisting}
+#include <stdio.h>
+#define MAX 100
+int main() {
+    int a[MAX][MAX], M, N, i, j;
+    printf("Vnesete M i N: \n");
+    scanf("%d %d", &M, &N);
+    printf("Vnesete ja matricata: \n");
+    for (i = 0; i < M; i++) {
+        for (j = 0; j < N; j++) {
+            printf("a[%d][%d] = ", i, j);
+            scanf("%d", &a[i][j]);
+        }
+    }
+    for (i = 0; i < M / 2; i++) {
+        int temp = a[i][i];
+        a[i][i] = a[M - 1 - i][M - 1 - i];
+        a[M - 1 - i][M - 1 - i] = temp;
+        temp = a[i][M - 1 - i];
+        a[i][M - 1 - i] = a[M - 1 - i][i];
+        a[M - 1 - i][i] = temp;
+    }
+    printf("Rezultantnata matrica e: \n");
+    for (i = 0; i < M; i++) {
+        for (j = 0; j < N; j++) {
+            printf("%d\t", a[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}{Материјали}{}
+	Предавања, аудиториски вежби, соопштенија\\
+	\href{http://courses.finki.ukim.mk/}{\textbf{courses.finki.ukim.mk}}
+	\vfill
+	Изворен код на сите примери и задачи\\
+	\href{http://bitbucket.org/tdelev/finki-sp/}{\textbf{bitbucket.org/tdelev/finki-sp}}
+	\vfill
+	{\Huge Прашања ?}
+\end{frame}

@@ -1,0 +1,379 @@
+\section{Вектори (еднодимензионални полиња)}
+
+\begin{frame}[fragile]{Задачa 1}
+Да се напише програма која за две низи кои се внесуваат од тастатура ќе провери
+дали се еднакви или не. На екран да се испечати резултатот од споредбата.\\
+Максимална големина на низите е 100.
+\pause
+\begin{exampleblock}{Решение 1 дел}
+\begin{lstlisting}
+#include<stdio.h>
+#define MAX 100
+int main() {
+    int n1, n2, element, i;
+    int a[MAX], b[MAX];
+    printf("Golemina na prvata niza:  ");
+    scanf("%d", &n1);
+    printf("Golemina na vtorata niza:  ");
+    scanf("%d", &n2);
+    if(n1 != n2)
+        printf("Nizite ne se ednakvi\n");
+\end{lstlisting}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Задача 1}{Решение 2 дел}
+\begin{exampleblock}{Решение 2 дел}
+\begin{lstlisting}
+    else {
+        printf("Vnesi gi elementite od prvata niza: \n");
+        for(i = 0; i < n1; ++i) {
+            printf("a[%d] = ", i);
+            scanf("%d", &a[i]);
+        }
+        printf("Vnesi gi elementite od vtorata niza: \n");
+        for(i = 0; i < n2; ++i) {
+            printf("b[%d] = ", i);            
+            scanf("%d", &b[i]);
+        }
+        //proverka dali nizite se ednakvi:
+        for(i = 0; i < n1; ++i)
+            if(a[i] != b[i])
+                break;
+        if(i == n1)
+            printf("Nizite se ednakvi \n");
+        else
+            printf("Nizite ne se ednakvi \n");    
+    }
+    return 0;
+}
+\end{lstlisting}
+\end{exampleblock}
+\end{frame}
+
+
+\begin{frame}{Задачa 2}
+Да се напише програма која за низа, чии што елементи се внесуваат од тастатура, ќе го пресмета збирот на парните елементи, 
+збирот на непарните елементи, како и односот помеѓу бројот на парни и непарни елементи. Резултатот да се испечати на екран.
+\begin{exampleblock}{Пример}
+За низата:\\
+\texttt{3 {\color{red}2} 7 {\color{red}6} {\color{red}2} 5 1}\\
+На екран ќе се испечати: \\
+\texttt{suma\_parni = 10}\\
+\texttt{suma\_neparni = 16}\\
+\texttt{odnos = 0.75}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Задачa 2}{Решение} 
+\begin{exampleblock}{Решение}
+\begin{lstlisting}
+#include <stdio.h>
+#define MAX 100
+int main() {
+    int i, n, a[MAX], brNep = 0, brPar = 0, sumNep = 0, sumPar = 0;
+    printf("Vnesi ja goleminata na nizata: \n");
+    scanf("%d", &n);
+    printf("Vnesi gi elementite od nizata: \n");
+    for(i = 0; i < n; ++i)
+        scanf("%d", &a[i]);
+    for(i = 0; i < n; ++i) {
+        if(a[i] % 2) {
+            brNep++;
+            sumNep += a[i];
+        } else {
+            brPar++;
+            sumPar += a[i];
+        }
+    }
+    printf("Sumata na parni elementi: %d\nSumata na neparni elementi: %d\n", sumPar, sumNep);
+    printf("Odnosot na parnite so neparnite elementi e %.2f\n", (float)brPar / brNep);
+    return 0;
+}
+\end{lstlisting}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}{Задачa 3}
+Да се напише програма која ќе го пресмета скаларниот производ на два вектори со по n координати. Бројот на координати n, како и координатите на векторите се внесуваат од тастатура. Резултатот да се испечати на екран.
+\begin{exampleblock}{Пример}
+Координати на вектор А:\\
+\texttt{3 2 7}\\
+Координати на вектор B:\\
+\texttt{1 2 4}\\
+Скаларниот производ е:\\
+\texttt{AB = 3*1 + 2*2 + 7*4 = 35}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Задача 3}{Решение} 
+\begin{exampleblock}{Решение}
+\begin{lstlisting}
+#include<stdio.h>
+#define MAX 100
+int main() {
+    int a[MAX], b[MAX], n, i, scalar = 0;
+    printf("Vnesi ja goleminata na vektorite: ");
+    scanf("%d", &n);
+    printf("Vnesi gi koordinatite na prviot vector: \n");
+    for(i = 0; i < n; ++i)
+        scanf("%d", &a[i]);
+    printf("Vnesi gi koordinatite na vtoriot vector: \n");
+    for(i = 0; i < n; ++i)
+        scanf("%d", &b[i]);
+    for(i = 0; i < n; ++i)
+        scalar += a[i] * b[i];
+    printf("Scalarniot proizvod na vektorite e: %d\n", scalar);
+    return 0;
+}
+\end{lstlisting}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}{Задачa 4}
+Да се напише програма која ќе провери дали дадена низа од n елементи која се
+внесува од тастатура е строго растечка, строго опаѓачка или ниту строго растечка
+ниту строго опаѓачка. Резултатот да се испечати на екран.
+\begin{exampleblock}{Пример}
+Строго растечка:\\
+\texttt{3 4 7}\\
+Строго опаѓачка:\\
+\texttt{6 5 4}\\
+Ниту строго растечка, ниту строго опаѓачка:\\
+\texttt{1 1 2 3}\\
+\end{exampleblock}
+\end{frame}
+
+
+\begin{frame}[fragile,shrink=10]{Задача 4}{Решение} 
+\begin{exampleblock}{Решение}
+\begin{lstlisting}
+#include <stdio.h>
+#define MAX 100
+int main() {
+    int n, element, a[MAX], i;
+    short rastecka = 1, opagacka = 1;
+    printf("Vnesi ja goleminata na nizata: \n");
+    scanf("%d", &n);
+    printf("Vnesi gi elementite od nizata: \n");
+    for(i = 0; i < n; ++i)
+        scanf("%d",&a[i]);
+    for(i = 0; i< n-1; ++i) {
+        if(a[i] >= a[i+1]) {
+            rastecka = 0;
+            break;
+        }
+    }    
+    for(i = 0; i < n-1; ++i) {
+        if(a[i] <= a[i+1]) {
+            opagacka = 0;
+            break;
+        }
+    }
+    if(!opagacka && !rastecka)
+        printf("Nizata ne e nitu strogo rastecka nitu strogo opagacka \n");
+    else if(opagacka)
+        printf("Nizata e strogo opagacka \n");
+    else if(rastecka)
+        printf("Nizata e strogo rastecka \n");
+    return 0;
+}
+\end{lstlisting}
+\end{exampleblock}
+\end{frame}
+
+
+\begin{frame}
+\textbf{За дома:} Да се провери дали е растечка, опаѓачка или ниту растечка ниту опаѓачка\\
+\begin{exampleblock}{Пример}
+Растечка:\\
+\texttt{1 1 2 3}\\
+Опаѓачка:\\
+\texttt{6 5 5 3}\\
+Ниту растечка, ниту опаѓачка:\\
+\texttt{1 1 2 3 2}\\
+\texttt{1 1 1}\\
+\end{exampleblock}
+\end{frame}
+
+
+\begin{frame}{Задачa 5}
+Да се напише програма која што ќе ги избрише дупликатите од една низа. На крај,
+да се испечати на екран новодобиената низа. Елементите од низата се внесуваат од тастатура.
+\begin{exampleblock}{Пример}
+Почетна низа:\\
+\texttt{1 {\color{red}1} 2 3 4 7 {\color{red}3} {\color{red}2} {\color{red}4}}\\
+Резултантна низа:\\
+\texttt{1 2 3 4 7}\\
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Задача 5}{Решение} 
+\begin{lstlisting}
+#include <stdio.h>
+#define MAX 100
+int main() {
+    int a[MAX], n, i, j, k, izbrisani = 0;
+    printf("Vnesi ja goleminata na nizata: \n");
+    scanf("%d", &n);
+    printf("Vnesi gi elementite od nizata: \n");
+    for(i = 0; i < n; ++i)
+        scanf("%d",&a[i]);
+    for(i = 0; i < n - izbrisani; ++i)
+        for(j = i + 1; j < n - izbrisani; ++j)
+            if(a[i] == a[j]) {
+                for(k = j; k < n - 1 - izbrisani; ++k)
+                    a[k] = a[k + 1];
+                izbrisani++;
+                j--;
+            }
+    n -= izbrisani;
+    printf("Rezultantnata niza e: \n");
+    for(i = 0; i < n; ++i)
+        printf("%d\t", a[i]);
+    return 0;
+}
+\end{lstlisting}
+\end{frame}
+
+\section{Матрици (дводимензионални полиња)}
+
+\begin{frame}{Задачa 6}
+Да се напише програма која ќе испечати на екран дали дадена матрица е симетрична во однос на главната дијагонала. 
+Димензиите и елементите на матрицата се внесуваат од тастатура.
+\begin{exampleblock}{Пример}
+Пример за симетрична матрица:\\
+$$\begin{bmatrix}
+1 & 2 & 3 \\ 2 & 1 & 4 \\ 3 & 4 & 1
+\end{bmatrix}$$
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Задача 6}{Решение} 
+\begin{lstlisting}
+#include <stdio.h>
+#define MAX 100
+int main() {
+    int a[MAX][MAX], n, i, j;
+    short tag = 1;
+    printf("Vnesi dimenzii na matricata: \n");
+    scanf("%d", &n);
+    printf("Vnesi gi elementite na matricata: \n");
+    for(i = 0; i < n; ++i)
+        for(j = 0; j < n; ++j)
+            scanf("%d", &a[i][j]);
+    for(i = 0; i < n - 1; ++i) {
+        for(j = i + 1; j < n - 1; ++j)
+            if(a[i][j] != a[j][i]) {
+                tag = 0;
+                break;
+            }
+        if(!tag) break;
+    }
+    if(tag)
+        printf("Matricata e simetricna vo odnos na glavnata dijagonala\n");
+    else
+        printf("Matricata ne e simetricna vo odnos na glavnata dijagonala\n");
+    return 0;
+}
+    
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[shrink = 10]{Задачa 7}
+Да се напише програма која за матрица внесена од тастатура ќе ги замени елементите од главната дијагонала со разликата од максималниот и минималниот елемент во матрицата. Резултантната матрица да се испечати на екран.
+\begin{exampleblock}{Пример}
+Влезна матрица:\\
+$$\begin{bmatrix}
+{\color{red}1} & 2 & 3 & 4 \\ 5 & 6 & 7 & 8 \\ 9 & 10 & 11 & 12 \\ 13 & 14 & 15 & {\color{red}16}
+\end{bmatrix}$$
+Излезна матрица:\\
+$$\begin{bmatrix}
+{\color{red}15} & 2 & 3 & 4 \\ 5 & {\color{red}15} & 7 & 8 \\ 9 & 10 & {\color{red}15} & 12 \\ 13 & 14 & 15 & {\color{red}15}
+\end{bmatrix}$$
+\end{exampleblock}
+\end{frame}
+
+
+\begin{frame}[fragile]{Задача 7}{Решение} 
+\begin{lstlisting}
+#include<stdio.h>
+#define MAX 100
+int main() {
+    int a[MAX][MAX], n, i, j, max, min;
+    printf("Vnesi dimenzii na matricata: \n");
+    scanf("%d", &n);
+    printf("Vnesi gi elementite na matricata: \n");
+    for(i = 0; i < n; ++i)
+        for(j = 0; j < n; ++j) {
+            scanf("%d", &a[i][j]);
+            if(i == 0 && j == 0)
+                max = min = a[i][j];
+            else if(max < a[i][j])
+                max = a[i][j];
+            else if(min > a[i][j])
+                min = a[i][j];
+        }
+    for(i = 0; i < n; ++i)
+        a[i][i] = max - min;
+    for(i = 0; i < n; ++i) {
+        printf("\n");
+        for(j = 0; j < n; ++j)
+            printf("%d\t", a[i][j]);
+    }
+    return 0;
+}
+\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}{Задачa 8}
+Да се пресмета разликата на збирот на елементите во непарните колони и збирот на елементите во парните редици. Резултатот да се испечати на екран. Податоците за матрицата се внесуваат од тастатура. Матрицата не мора да биде квадратна.
+\begin{exampleblock}{Пример}
+Влезна матрица:\\
+$$\begin{bmatrix}
+{\color{red}1} & {2} & {\color{red}3} & {4} \\ 
+{\color{red}5} & {\color{red}6} & {\color{red}7} & {\color{red}8} \\ 
+{\color{red}9} & {10} & {\color{red}11} & {12} 
+\end{bmatrix}$$
+Програмата треба да отпечати:\\
+\texttt{{\color{red}36} - {\color{blue}26} = 10}
+\end{exampleblock}
+\end{frame}
+
+
+\begin{frame}[fragile]{Задача 8}{Решение} 
+\begin{lstlisting}
+#include<stdio.h>
+#define MAX 100
+int main() {
+    int a[MAX][MAX], n, m, i, j, sumKol=0, sumRed=0;
+    printf("Vnesi dimenzii na matricata: \n");
+    scanf("%d %d", &n, &m);
+    printf("Vnesi gi elementite na matricata: \n");
+    for(i = 0; i < n; ++i)
+        for(j = 0; j < m; ++j)
+            scanf("%d", &a[i][j]);
+    for(i = 0; i < n; ++i)
+        for(j = 0; j < m; ++j) {
+            if((j + 1) % 2)
+                sumKol += a[i][j];
+            if(!((i + 1) % 2))
+                sumRed += a[i][j];
+        }
+    printf("Razlikata na zbirot na elementite od neparnite koloni so zbirot na elementite od parnite redici e %d", sumKol - sumRed);
+    return 0;
+}
+\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}{Материјали}{}
+    Предавања, аудиториски вежби, соопштенија\\
+    \href{http://courses.finki.ukim.mk/}{\textbf{courses.finki.ukim.mk}}
+    \vfill
+    Изворен код на сите примери и задачи\\
+    \href{http://bitbucket.org/tdelev/finki-sp/}{\textbf{bitbucket.org/tdelev/finki-sp}}
+    \vfill
+    {\Huge Прашања ?}
+\end{frame}
