@@ -336,6 +336,38 @@ int eprost(int n) {
 \end{itemize}
 \end{frame}
 
+\begin{frame}[fragile]{Задача 5}{Решение}
+\begin{lstlisting}
+#include <stdio.h>
+int factoriel(int k) {
+    int i, fact_num = 1;
+    for (i = 1; i <= k; i++)
+        fact_num *= i;
+    return fact_num;
+}
+int suma(int k) {
+    int i, zbir = 0;
+    for (i = 1; i <= k; i++)
+        zbir += i;
+    return zbir;
+}
+int main() {
+    int i, n, rezultat = 0;
+    printf("Vnesete eden pozitiven cel broj \n");
+    if (scanf("%d", &n) && n > 0) {
+        for (i = 1; i < n; i++) {
+            rezultat += factoriel(suma(i));
+            printf("%d! + ", suma(i));
+        }
+        rezultat += factoriel(suma(n));
+        printf("%d! = %d", suma(n), rezultat);
+    } else
+        printf("Vnesena e pogresna vrednost \n");
+    return 0;
+}
+\end{lstlisting}
+\end{frame}
+
 \begin{frame}{Задачa 6}
 Да се напише функција што прима два параметра $x$ и $n$ и враќа:
 \[
@@ -396,50 +428,6 @@ int main() {
 \end{columns}
 \end{frame}
 
-\begin{frame}{Задача 7}
-Да се сортираат елементите на една низа во растечки
-редослед со методот на меурче.
-\begin{exampleblock}{Метод на меурче}
-\begin{scriptsize}
-Се започнува од првиот елем. и се споредуваат секои два соседни додека не се
-дојде до последниот елем. При секое споредување, ако претходниот има поголема
-вредност, тогаш си ги заменуваат местата. Така најголемиот елемент се доведува
-на последната позиција во низата. Се повторува истата постапка од 1-от до
-претпоследниот елем. во низата, така што сега на претпоследната позиција ќе
-исплива елем. помал од најголемиот елем. во низата итн. На крајот се споредуваат
-само 1-от и 2-от елемент од низата.
-\end{scriptsize}
-\end{exampleblock}
-\end{frame}
-
-\begin{frame}[fragile]{Задачa 7}{Решение}
-\begin{lstlisting}
-#include <stdio.h>
-#define MAX 100
-int main() {
-    int a[MAX], n, i, j, temp;
-    printf("Vnesete go brojot na elementi vo nizata \n");
-    scanf("%d", &n);
-    printf("Vnesete gi elementite na nizata: \n");
-    for (i = 0; i < n; i++)
-        scanf("%d", &a[i]);
-    for (i = n - 1; i > 0; i--) {
-        for (j = 1; j <= i; j++) {
-            if (a[j - 1] > a[j]) {
-                temp = a[j - 1];
-                a[j - 1] = a[j];
-                a[j] = temp;
-            }
-        }
-    }
-    printf("Rezultantnata niza e: \n");
-    for (i = 0; i < n; i++)
-        printf("%d ", a[i]);
-    printf("\n");
-    return 0;
-}
-\end{lstlisting}
-\end{frame}
 
 
 \begin{frame}{Материјали}{}
