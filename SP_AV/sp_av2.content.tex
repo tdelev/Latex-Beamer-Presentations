@@ -1,5 +1,7 @@
 % DO NOT COMPILE THIS FILE DIRECTLY!
 % This is included by the other .tex files.
+\section{Вовед во програмскиот јазик C}
+
 \begin{frame}{Вовед во програмскиот јазик C}
 \begin{itemize}
 \item Развиен во лабораториите на Bell во периодот од 1969 од 1973 од страна на Dennis Ritchie
@@ -58,18 +60,18 @@
     Севкупниот изворен код кој се пишува во програмскиот јазик C е организиран во функции
     \linebreak
     
-    \begin{columns}[t]
-        \column{.5\textwidth}
-            \begin{block}{Програма во C}
+\begin{columns}[t]
+\column{.5\textwidth}
+\begin{block}{Програма во C}
 \begin{lstlisting}
 int main() {
     deklaracija_na_promenlivi;
     programski_naredbi;
 }
 \end{lstlisting}
-            \end{block}
-        \column{.5\textwidth}
-            \begin{block}{Програма во Паскал}
+\end{block}
+\column{.5\textwidth}
+\begin{block}{Програма во Паскал}
 \begin{lstlisting}
 Program ime_na_programata;
 var deklaracija_na_promenlivi;
@@ -77,8 +79,8 @@ begin
     programski_naredbi;
 end.
 \end{lstlisting}
-            \end{block}
-    \end{columns}
+\end{block}
+\end{columns}
 
 \end{frame}
 
@@ -228,6 +230,8 @@ int main() {
 
 \end{frame}
 
+\section{Променливи}
+
 \begin{frame}{Променливи (variables)}
 \begin{itemize}
 \item Променливите се симболички имиња за места во меморијата во кои се чуваат некакви вредности
@@ -297,6 +301,8 @@ int main() {
     \end{exampleblock}
 \end{frame}
 
+\section{Константи}
+
 \begin{frame}{Константи}
 \begin{itemize}
 \item Со помош на константи се означуваат вредности кои не се менуваат во текот на извршувањето на програмата
@@ -358,6 +364,8 @@ int main() {
 \end{lstlisting}
     \end{exampleblock}
 \end{frame}
+
+\section{Оператори}
 
 \begin{frame}{Оператори}
 \begin{itemize}
@@ -627,14 +635,4 @@ int main() {
 }
 \end{lstlisting}
     \end{exampleblock}
-\end{frame}
-
-\begin{frame}{Материјали}{}
-    Предавања, аудиториски вежби, соопштенија\\
-    \href{http://courses.finki.ukim.mk/}{\textbf{courses.finki.ukim.mk}}
-    \vfill
-    Изворен код на сите примери и задачи\\
-    \href{http://bitbucket.org/tdelev/finki-krs/}{\textbf{bitbucket.org/tdelev/finki-sp}}
-    \vfill
-    {\Huge Прашања ?}
 \end{frame}

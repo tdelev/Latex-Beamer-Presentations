@@ -1,4 +1,4 @@
-\documentclass{beamer}
+\documentclass[handout]{beamer}
 \usepackage[T2A]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{listings}
@@ -21,37 +21,15 @@
 \institute{Структурирано програмирање}
 \date{Факултет за информатички науки и компјутерско инженерство - Скопје 2011}
 
+\input{code_style.tex}
 
 \begin{document}
 
-\lstset{language=C,captionpos=b,
-tabsize=4,frame=lines,
-basicstyle=\scriptsize\ttfamily,
-keywordstyle=\color{blue},
-commentstyle=\color{lightgray},
-stringstyle=\color{violet},
-breaklines=true,showstringspaces=false}
-
 \frame[t,plain]{\titlepage}
 
-\AtBeginSection[]
-{
-  \frame<handout:0>
-  {
-    \frametitle{Содржина}
-    \tableofcontents[currentsection,hideallsubsections]
-  }
-}
-
-\AtBeginSubsection[]
-{
-  \frame<handout:0>
-  {
-    \frametitle{Содржина}
-    \tableofcontents[sectionstyle=show/hide,subsectionstyle=show/shaded/hide]
-  }
-}
-
+\input{sections.tex}
 \input{sp_av2.content.tex}
+\input{end_frame.tex}
+
 \end{document}
 
