@@ -1,0 +1,14 @@
+\frametitle {Задача 5}Да се напише програма која ќе ги отпечати на екран остатоците при делењето на бројот 19 со 2, 3, 5 и 8.
+\begin{exampleblock}{Решение}
+\begin{lstlisting}
+#include <stdio.h>
+int main() {
+   int a = 19;
+   printf("Ostatok pri delenje na %d so 2: %d\n", a, a % 2);
+   printf("Ostatok pri delenje na %d so 3: %d\n", a, a % 3);
+   printf("Ostatok pri delenje na %d so 5: %d\n", a, a % 5);
+   printf("Ostatok pri delenje na %d so 8: %d\n", a, a % 8);
+   return 0;
+}
+\end{lstlisting}
+\end{exampleblock}

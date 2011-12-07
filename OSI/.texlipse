@@ -1,13 +1,13 @@
 #TeXlipse project settings
-#Sun Nov 20 17:17:05 CET 2011
+#Sun Dec 04 23:17:37 CET 2011
 builderNum=2
 outputDir=out
 makeIndSty=
 bibrefDir=
 outputFormat=pdf
 tempDir=tmp
-mainTexFile=osi_av7.tex
-outputFile=osi_av7.pdf
+mainTexFile=lab3.tex
+outputFile=lab3.pdf
 langSpell=en
 markDer=true
 srcDir=src

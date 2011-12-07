@@ -1,0 +1,15 @@
+\frametitle {5 работи за да почнете}\begin {enumerate}\setcounter{enumi}{3}
+  \item Code.Google.com password
+  \begin{itemize}
+  \item Најавете се на Project Hosting (http://code.google.com/hosting/)
+  \item Отидете на Profile->Settings (http://code.google.com/hosting/settings)
+  \item Забележете ја вашата лозинка
+  \end{itemize}
+  \item Subversion URL на проектот хостиран на Google Code
+  \begin{itemize}
+  \item Најавете се на Project Hosting (http://code.google.com/hosting/)
+  \item Отидете на Project->Source
+  \begin{verbatim}(http://code.google.com/p/{your_project}/source/checkout)\end{verbatim}
+  \item Адресата на проектот е во формат \begin{verbatim} https://projectname\rangle.googlecode.com/svn/trunk/ \end{verbatim}
+  \end{itemize}
+\end{enumerate}

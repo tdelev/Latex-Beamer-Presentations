@@ -1,0 +1,4 @@
+\beamer@endinputifotherversion {3.10pt}
+\beamer@sectionintoc {2}{\IeC {\CYRSH }\IeC {\cyrt }\IeC {\cyro } \IeC {\cyre } \IeC {\cyrt }\IeC {\cyro }\IeC {\cyra } \IeC {\cyrk }\IeC {\cyro }\IeC {\cyrn }\IeC {\cyrt }\IeC {\cyrr }\IeC {\cyro }\IeC {\cyrl }\IeC {\cyra } \IeC {\cyrn }\IeC {\cyra } \IeC {\cyrv }\IeC {\cyre }\IeC {\cyrr }\IeC {\cyrz }\IeC {\cyri }\IeC {\cyri }?}{3}{0}{1}
+\beamer@sectionintoc {3}{\IeC {\CYRV }\IeC {\cyri }\IeC {\cyrz }\IeC {\cyru }\IeC {\cyre }\IeC {\cyrl }\IeC {\cyrn }\IeC {\cyri } \IeC {\cyrp }\IeC {\cyrr }\IeC {\cyri }\IeC {\cyrm }\IeC {\cyre }\IeC {\cyrr }\IeC {\cyri } (SVN)}{13}{0}{2}
+\beamer@sectionintoc {4}{\IeC {\CYRZ }\IeC {\cyra }\IeC {\cyrk }\IeC {\cyrl }\IeC {\cyru }\IeC {\cyrch }\IeC {\cyro }\IeC {\cyrk }}{35}{0}{3}

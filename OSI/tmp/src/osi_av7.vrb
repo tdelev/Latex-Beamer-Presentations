@@ -1,0 +1,10 @@
+\frametitle {Тагирање}\framesubtitle {Subversion}
+Во Subversion, таговите се едноставни стебла кои се сложувате да не ги
+менувате. Тие се овде само за потомство, за да може да видите што точно
+содржела вашата верзија 1.0. Така овие стебла завршуваат тука и не се спојуваат.
+\begin{exampleblock}{Во Subversion:}
+\begin{verbatim}
+(in trunk)
+svn copy http://path/to/revision http://path/to/tag
+\end{verbatim}
+\end{exampleblock}

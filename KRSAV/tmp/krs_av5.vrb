@@ -1,0 +1,37 @@
+\frametitle {Решение на задача 2}\begin {exampleblock}{Решение}
+\begin{lstlisting}
+#include <stdio.h>
+int main() {
+    char op;
+    float br1, br2, rez = 0;
+    printf("Vnesete dva broja i operator vo format:\n");
+    printf("broj1 operator broj2\n");
+    scanf("%f %c %f",&br1, &op, &br2);
+    switch (op) {
+        case '+':
+            rez = br1 + br2;
+            break;
+        case '-':
+            rez = br1 - br2;
+            break;
+        case '*':
+            rez = br1 * br2;
+            break;
+        case '/':
+            if (br2 == 0) {
+                printf("Greshka: Delenje so 0\n");
+                printf(" operacijata ke se ignorira\n");
+            }
+            else {
+                rez = br1 / br2;
+            }
+            break;
+        default:
+            printf("Nepoznat operator %c\n", op);
+        break;
+    }
+    if(res) printf("Rezultatot od operacijata: %.2f %c %.2f = %f", br1, op, br2,
+    rez); return (0);
+}
+\end{lstlisting}
+\end{exampleblock}

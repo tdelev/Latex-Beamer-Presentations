@@ -1,0 +1,155 @@
+\documentclass[12pt,a4paper]{exam}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{listings}
+\usepackage{color}
+
+\lstset{language=C,captionpos=b,
+tabsize=4,frame=lines,
+basicstyle=\ttfamily,
+keywordstyle=\color{blue},
+commentstyle=\color{lightgray},
+stringstyle=\color{red},
+breaklines=true,showstringspaces=false}
+\begin{document}
+\pagestyle{headandfoot}
+\header{\textbf{ФИНКИ\\Основи на софтверско
+инженерство}}{}{\large{\textbf{Лабораториска вежба 3}}}
+\headrule
+\cfoot{Страна \thepage}
+\begin{center}
+\Large{\textbf{Работа со системи за контрола на верзии - SVN}}
+\end{center}
+
+\section{Инсталирајте SVN client}
+
+\begin{enumerate}
+  \item Симнете го од некоја од следните локации:\\
+  http://files.finki.ukim.mk/uploads/tomche.delev/RapidSVNPortable.exe\\ 
+  http://rapidshare.com/files/28919598/RapidSVNPortable.exe
+  \item Отакако ќе се симне изврешете го и отпакувајте го во "My Documents"
+  \item Иврешете ја апликацијата "PortableRapidSVN.exe"
+\end{enumerate}
+ 
+\section{Повлекување на работната копија (SVN checkout)}
+\begin{enumerate}
+  \item Од менито на апликацијата изберете \textbf{Repository->Checkout...} (Ctrl+O)
+  \item Во полето *URL* внесете ја следната патека\\
+  \linebreak
+  http://svn.finki.ukim.mk/svn/OSI2011/
+  \linebreak
+  \item Во полето \textbf{Destination Directory} изберете патека до директориумот во
+  кој ќе се смести вашата работна копија од репозиторито (нека биде некој
+  фолдер во MyDocuments пример ``osisvn'')
+  \item Кликнете ОК и почекајте да се симне работната копија 
+  \item Како корисничко име и лозинка внесете некоја комбинација од корисничките
+  имиња и лозинки на крајот на овој документ
+ \end{enumerate}
+
+\texttt{svn checkout}
+
+\section{Додавање содржина во работната копија}
+\textbf{Ова го работите во синхронизација со вашиот партнер во вежбата
+колегата/колешката лево/десно од вас (по договор)}
+\begin{enumerate}
+  \item Преку ``Windows Explorer'' креирајте нов фолдер и именувајте го
+ ``indeks1\_indeks2'' каде што ``indeks1'' и ``indeks2'' се вашиот и индексот на колегата со кој работите заедно (пр. 111500\_111600).
+ \textbf{Ова го прави само едниот од партнерите во вежбата.}
+ \item Во овој фолдер додадете ги задачите од лабораториската вежба КРС (само .c
+ датотеките). Едниот од вас нека ги додаде првите 2 задачи, потоа другиот партнер ќе ги додаде останатите.
+\end{enumerate}
+  
+\texttt{svn add}
+  
+\section{Исраќање на содржината во репозиториумот (SVN commit)}
+
+\begin{enumerate}
+  \item Со десен клик во главниот прозорец на вашиот директориум ``indeks1\_indeks2''
+ изберете \textbf{Add recursive} (ова го додава директориумот и се што се содржи во него)
+  \item Со десен клик на вашиот директориум изберете \textbf{Commit...}.
+  \item По ова вашата содржина е додадена во репозиториумот.
+\end{enumerate}
+
+\texttt{svn commit}
+
+\section{Повлекување на последната содржина од репозитори (SVN update)}
+
+\begin{enumerate}
+  \item Со десен клик на вашиот директориум изберете \textbf{Update...} (доколку сакате
+  да ги повлечете промените од цела работна копија во која работат сите ваши
+  колеги изврешете ја оваа наредба на почетниот директориум)
+  \item По извршување на оваа наредба вие и вашиот партнер за вежбата треба да
+  имате иста содржина во вашите работни копии на вашиот заеднички директориум
+\end{enumerate}
+
+\texttt{svn update}
+
+\section{Менување на содржината на одредена датотека}
+\begin{enumerate}
+  \item Променете ја содржината на накоја од датотеките и испратете ги
+  промените. Потоа повлечете ја најновата верзија и видете ги промените кои ги
+  направил вашиот партнер.
+\end{enumerate}
+   
+\section{Бришење на датотеки}
+
+\begin{enumerate}
+  \item Преку \textbf{Windows explorer} избрешете некоја датотека во вашиот
+  работен директориум. Потоа повлечете ја најновата верзија од репозиториумот
+  (SVN update)
+  \item Што се случува со избришаната датотека?
+  \item За да избришете датотека од вашиот работен директориум, а потоа во слениот
+  \textbf{Commit} да се избрише и од репозиториумот треба преку работниот
+  прозороц на RapidSVN од десен клик на датаотеката која сакате да ја избришете
+  треба да изберете \textbf{Delete}. Со извршување на \textbf{Commit} по оваа акција
+  датотеката ќе биде избришана од репозиториумот.
+\end{enumerate}
+ 
+\texttt{svn delete}\\
+
+\emph{Сите останати акции за управување со датотеки и директориуми како
+преместување \textbf{(Cut\&Paste)} или преименување \textbf{(Rename)} мора да се прават преку работниот
+прозорец на \textbf{RapidSVN (Move, Rename)}}
+
+\section{Менување датотеки (Конфликти)}
+
+ Двајцата партнери во вежбата направете промена во иста датоека заменувајќи ја истата линија со нешто по ваш избор
+  Испратете ги промените со SVN commit и справете се со конфликтот кој ќе
+ настане
+
+\section{Експериментирајте со другите наредби}
+
+  Пробајте ги останатите команди во RapidSVN како *Log*, *Info* итн.
+
+\section{Кориснички имиња и лозинки}
+Изберете некоја од следните кориснички имиња и лозинки. Изборот нека биде според
+следната формула:
+\begin{verbatim}
+indeks % 20 + 1 (Pr. 111205 % 20 + 1 = 6) osiUser06 8270
+Username    Password
+osiUser02   6908
+osiUser03   7761
+osiUser04   5572
+osiUser05   3319
+osiUser06   8270
+osiUser07   6757
+osiUser08   8509
+osiUser09   2360
+osiUser10   6533
+osiUser11   7938
+osiUser12   2799
+osiUser13   5000
+osiUser14   7366
+osiUser15   3040
+osiUser16   9085
+osiUser17   1446
+osiUser18   8209
+osiUser19   5791
+osiUser20   9635
+\end{verbatim}
+
+
+\end{document}

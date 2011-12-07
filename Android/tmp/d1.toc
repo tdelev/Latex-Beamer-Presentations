@@ -1,0 +1,5 @@
+\beamer@endinputifotherversion {3.10pt}
+\beamer@sectionintoc {1}{Introduction (C1)}{3}{0}{1}
+\beamer@sectionintoc {2}{Android Overview (C2)}{8}{0}{2}
+\beamer@sectionintoc {3}{Steps in Android Application Development (C3)}{15}{0}{3}
+\beamer@sectionintoc {4}{Android UI Part 1}{33}{0}{4}

@@ -1,0 +1,28 @@
+\frametitle {Задачa 4}\framesubtitle {Решение}
+\begin{lstlisting}
+void insert(int a[], int n) {
+    int i;
+    for(i = 0; i < n; i++) {
+        printf("a[%d] = ", i);
+        scanf("%d", &a[i]);
+    }
+}
+void print(int *a, int n) {
+    int i;
+    for(i = 0; i < n; i++) {
+        printf("%d\t", *(a + i));
+    }
+    printf("\n");
+}
+int main() {
+    int a[MAX], n;
+    printf("Vnesi dolzina na nizata: ");
+    scanf("%d", &n);
+    insert(a, n);
+    bubbleSort(a, n);
+    //selectionSort(a, n, 0);
+    //insertionSort(a, n);
+    print(a, n);
+    return 0;
+}
+\end{lstlisting}

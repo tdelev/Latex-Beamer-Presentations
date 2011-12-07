@@ -1,0 +1,23 @@
+\frametitle {Options Menu}When the menu is opened for the first time, the Android system will
+call the Activity \texttt{onCreateOptionsMenu()} callback method
+\begin{exampleblock}{The menu xml}
+\begin{lstlisting}
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/save_game"
+        android:title="@string/menu_save_game" />
+    <item android:id="@+id/end_game"
+        android:title="@string/menu_end_game" />
+</menu>
+\end{lstlisting}
+\end{exampleblock}
+\begin{exampleblock}{Inflating the menu}
+\begin{lstlisting}
+@Override
+public boolean onCreateOptionsMenu(Menu menu) {
+    MenuInflater inflater = getMenuInflater();
+    inflater.inflate(R.menu.game_menu, menu);
+    return true;
+}
+\end{lstlisting}
+\end{exampleblock}
