@@ -1,0 +1,93 @@
+%%This is a Master Thesis template
+\documentclass[a4paper,oneside]{report}
+\usepackage{ucs}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,bulgarian]{babel}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\addto\captionsbulgarian{%
+  \renewcommand{\contentsname}%
+    {Содржина}%
+  \renewcommand{\tablename}%
+    {Табела}%
+  \renewcommand{\figurename}%
+    {Слика}%
+  \renewcommand{\bibname}%
+    {Библиографија}%
+  \renewcommand{\listfigurename}%
+    {Листа на слики}%
+  \renewcommand{\listtablename}%
+    {Листа на табели}%
+}
+
+
+
+
+\begin{document}
+\title{Архитектура и развој на мобилни апликации со знаење за контекстот}
+\author{Томче Делев}
+\date{Декември 2010}
+\maketitle
+
+{\flushleft{Ментор:}}\\
+Вон. проф. д-р Дејан Ѓорѓевиќ\\
+Факултет за електротехника и информациски технологии
+\\[.5cm]
+Комисија:\\
+Проф. д-р Сузана Лошковска\\
+Факултет за електротехника и информациски технологии
+\\[.5cm]
+Вон. проф. д-р Дејан Ѓорѓевиќ\\
+Факултет за електротехника и информациски технологии
+\\[.5cm]
+Вон. проф. д-р Владимир Трајковиќ\\
+Факултет за електротехника и информациски технологии
+
+
+\newpage
+
+\newpage
+\begin{center}
+{\Large{\it\textbf{Благодарност}}}
+\\[2cm]
+{\it
+Би сакал да ја искажам мојата огромна благодарност до мојот ментор вон. проф.
+д-р Дејан Ѓорѓевиќ за постојаната поддршка преку искреното пренесување на
+неговото знаење и искуство, со што многу ми помогна во процесот на истражување и
+изработка на овој магистерски труд. Исто така би сакал да искажам голема
+благодарност до членовите на комисијата проф. д-р Сузана Лошковска и вон. проф.
+д-р Владимир Трајковиќ за сите совети и знаења кои ми ги пружија во текот на
+изработката на магистерскиот труд но и во текот на целокупните магистерски
+студии.
+
+Благодарност им должам и на колегите од компанијата CreationPal каде со
+практична работа во областа на софтверското инженерство, а преку развој и
+истражување на мобилната апликација SportyPal навлегов во оваа област.
+
+На крај би сакал да искажам и огромна благодарност до мојата фамилија за
+безрезервната љубов, огромното трпение и постојаното внимание што ми го
+посветуваат во секој момент.
+}
+\end{center}
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+\input{chapter1.tex}
+\input{chapter2.tex}
+\input{chapter3.tex}
+\input{chapter4.tex}
+\input{chapter5.tex}
+\input{chapter6.tex}
+
+\bibliographystyle{ieeetr}
+\bibliography{ref}
+
+\end{document}
