@@ -1,0 +1,137 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Content starts here %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Виртуелен деструктор}
+
+\begin{frame}[fragile]{Пример 1}{Зошто е потребен виртуелен десктруктор?}
+\lstinputlisting{src/av7/ex1.cpp}
+\begin{tiny}
+\begin{verbatim}
+Konstruiram objekt od Osnovna
+Konstruiram objekt od Izvedena
+Unishtuvam objekt od Osnovna
+\end{verbatim}
+\end{tiny}
+\end{frame}
+
+\begin{frame}[fragile]{Пример 2}{Зошто е потребен виртуелен десктруктор?}
+\lstinputlisting{src/av7/ex2.cpp}
+\begin{tiny}
+\begin{verbatim}
+Konstruiram objekt od Osnovna
+Konstruiram objekt od Izvedena
+Unishtuvam objekt od Izvedena
+Unishtuvam objekt od Osnovna
+\end{verbatim}
+\end{tiny}
+\end{frame}
+
+\section{Повеќекратно наследување}
+
+\begin{frame}{Задача 1}
+Да се напише класа Teacher која наследува особини од класите Employee и Person.
+\end{frame}
+
+\begin{frame}[fragile]{Задача 1}{Решение 1/3}
+\lstinputlisting[lastline=25]{src/av7/z1.cpp}
+\end{frame}
+
+\begin{frame}[fragile]{Задача 1}{Решение 2/3}
+\lstinputlisting[firstline=27,lastline=44]{src/av7/z1.cpp}
+\end{frame}
+
+\begin{frame}[fragile]{Задача 1}{Решение 3/3}
+\lstinputlisting[firstline=45]{src/av7/z1.cpp}
+\end{frame}
+
+\begin{frame}{Задача 2}
+Да се состави класа за автомобил со млазен погон кој наследува својства од две класи, автомобил и млазен авион.
+\end{frame}
+
+\begin{frame}[fragile]{Задача 2}{Решение 1/4}
+\lstinputlisting[lastline=22]{src/av7/z2.cpp}
+\end{frame}
+
+\begin{frame}[fragile]{Задача 2}{Решение 2/4}
+\lstinputlisting[firstline=23,lastline=49]{src/av7/z2.cpp}
+\end{frame}
+
+\begin{frame}[fragile]{Задача 2}{Решение 3/4}
+\lstinputlisting[firstline=50,lastline=72]{src/av7/z2.cpp}
+\end{frame}
+
+\begin{frame}[fragile]{Задача 2}{Решение 4/4}
+\lstinputlisting[firstline=73]{src/av7/z2.cpp}
+\end{frame}
+
+\section{Колоквиумски задачи}
+
+\begin{frame}{Задача 1}
+\begin{scriptsize}
+Да се дефинира класа Casovnik, за која се чуваат информации за:
+\begin{itemize}
+  \item час (цел број),
+  \item минути (цел број),
+  \item секунди (цел број),
+  \item призводител на часовникот (динамички алоцирана листа од знаци).
+\end{itemize}
+Од оваа класа да се изведат две нови класи \texttt{DigitalenCasovnik} и \texttt{AnalogenCasovnik}.
+За дигиталниот часовник дополнително се чуваат информации за стотинките и
+форматот на прикажување на времето (АМ или PM). За секоја од класите да се
+дефинираат конструктори со аргументи. Во рамките на изведените класи да се
+дефинира функција (Vreme) која го печати времето на дигиталниот часовник во
+формат: производител, час, миннути, секунди, стотинки, АМ или PM. 
+За аналогниот часовник функцијата печати: производител, час, минути, секунди.
+
+Дополнително да се преоптовари операторот $==$ кој го споредува времето кое го
+мерат два часовника и враќа \texttt{true} доколку времето на едниот часовник не
+отстапува за повеќе од 30 секунди во однос на времето на другиот часовник, а во
+спротивно враќа \texttt{false} (без да се води сметка за запоцнување на новиот
+ден). 
+
+Да се напише и надворешна функција (\texttt{Pecati}) која прима низа од
+покажувачи кон класата \texttt{Casovnik} и нивниот број, а го печати времето на сите
+часовници од низата.
+
+\end{scriptsize}
+\end{frame}
+
+\begin{frame}[fragile,shrink=10]{Задача 1}{Решение 1/4}
+\lstinputlisting[firstline=16,lastline=51]{src/av7/z3.cpp}
+\end{frame}
+\begin{frame}[fragile]{Задача 1}{Решение 2/4}
+\lstinputlisting[firstline=52,lastline=75]{src/av7/z3.cpp}
+\end{frame}
+\begin{frame}[fragile]{Задача 1}{Решение 3/4}
+\lstinputlisting[firstline=76,lastline=99]{src/av7/z3.cpp}
+\end{frame}
+\begin{frame}[fragile,shrink=10]{Задача 1}{Решение 4/4}
+\lstinputlisting[firstline=101]{src/av7/z3.cpp}
+\end{frame}
+
+\begin{frame}{Задача 2}
+\begin{scriptsize}
+Да се дефинира класа \texttt{Otpornik} во која се чува вредноста на импедансата на
+отпорникот $(Z=R)$. Класата треба да има метод кој ќе ја пресметува напонот на
+краевите на отпорникот кога низ него тече дадена струја $I (U=I*|Z|)$. Од
+класата отпорник да се изведе класата  \texttt{Impedansa} која ќе работи со комплексни импеданси
+$(Z=R+jX)$. Класите треба да овозможуваат собирање на вредностите на две
+импеданси преку операторот $+$ (сериска врска на две компоненети). Дополнително
+да се преоптовари и операторот $<<$.
+
+\end{scriptsize}
+\end{frame}
+
+\begin{frame}[fragile]{Задача 2}{Решение 1/3}
+\lstinputlisting[firstline=8,lastline=35]{src/av7/z4.cpp}
+\end{frame}
+\begin{frame}[fragile]{Задача 2}{Решение 2/3}
+\lstinputlisting[firstline=37,lastline=60]{src/av7/z4.cpp}
+\end{frame}
+\begin{frame}[fragile,shrink=10]{Задача 2}{Решение 3/3}
+\lstinputlisting[firstline=62]{src/av7/z4.cpp}
+\end{frame}
+
+
+

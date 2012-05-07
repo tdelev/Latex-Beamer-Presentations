@@ -1,0 +1,13 @@
+#TeXlipse project settings
+#Tue May 08 00:18:37 CEST 2012
+builderNum=2
+outputDir=out
+makeIndSty=
+bibrefDir=
+outputFormat=pdf
+tempDir=tmp
+mainTexFile=oop_av7.tex
+outputFile=oop_av7.pdf
+langSpell=en
+markDer=true
+srcDir=

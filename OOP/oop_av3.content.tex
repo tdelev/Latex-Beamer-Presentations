@@ -1,0 +1,113 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Content starts here %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Класи}
+
+\begin{frame}[fragile,shrink=-50]{Дефинирање класа}
+\begin{lstlisting}
+class ime_na_klasata {
+private:
+    /* deklaracija na promenlivi i metodi koi ne se vidlivi nadvor od klasata */
+public:
+    /* deklaracija na promenlivi i metodi koi se vidlivi nadvor od klasata */
+};
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile,shrink=10]{Дефинирање класа}{Пример}
+\lstinputlisting{src/av3/ex1.cpp}
+\end{frame}
+
+\begin{frame}{Животен циклус на објектите}
+\begin{enumerate}
+  \item Конструктор (Constructor) - посебен метод на секоја класа кој се
+  повикува секогаш кога се креира (инстанцира) објект од класата
+  \item Деструктор (Destructor) - посебен метод на секоја класа кој се
+  повикува кога треба да се ослободи меморијата која ја опфатил конструираниот
+  објект
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Задача 1}{Класа за триаголник}
+Да се напише класа за опишување на геометриско тело триаголник. Во класата да се
+напишат методи за пресметување на плоштината и периметарот на триаголникот.\\
+Потоа да се напише главна програма во која ќе се инстнацира еден објект од оваа
+класа со вредности за страните кои претходно ќе се прочитаат од тастатура. На
+овој објект да се повикат соодветните методи за пресметување на плоштината и
+периметарот.
+\end{frame}
+
+\begin{frame}[fragile]{Задача 1}{Решение}
+\lstinputlisting{src/av3/z1.cpp}
+\end{frame}
+
+\begin{frame}{Задача 2}{Класа за вработен}
+Да се напише класа во која ќе се чуваат основни податоци за вработен (име,
+плата и работна позиција). Работната позиција може да биде вработен, директор
+или шеф.\\
+Напишете главна програма во која се внесуваат податоци за N вработени од
+тастатура, а потоа се пачати листа на вработените сортирани според висината на
+платата во опаѓачки редослед.
+\end{frame}
+
+\begin{frame}[fragile]{Задача 2}{Решение 1/4}
+\lstinputlisting[lastline=25]{src/av3/z2.cpp}
+\end{frame}
+
+\begin{frame}[fragile]{Задача 2}{Решение 2/4}
+\lstinputlisting[firstline=26,lastline=46]{src/av3/z2.cpp}
+\end{frame}
+
+\begin{frame}[fragile]{Задача 2}{Решение 3/4}
+\lstinputlisting[firstline=47,lastline=74]{src/av3/z2.cpp}
+\end{frame}
+
+\begin{frame}[fragile]{Задача 2}{Решение 4/4}
+\lstinputlisting[firstline=75]{src/av3/z2.cpp}
+\end{frame}
+
+\begin{frame}{Задача 3}{Класа за e-mail}
+Да се напише класа која опишува една e-mail порака. Во класата треба да се
+имплементира метод за прикажување на целокупната порака на екран.\\
+Потоа да се напише главна програма во која се внесуваат параметрите на пораката,
+се инстанцира објект од оваа класа и се печати на екран неговата содржина. За
+проверување на валидноста на e-mail пораката (постоење на знакот @ во адресата)
+да се напише соодветна функција.
+\end{frame}
+
+\begin{frame}[fragile]{Задача 3}{Решение 1/4}
+\lstinputlisting[lastline=24]{src/av3/z3.cpp}
+\end{frame}
+
+\begin{frame}[fragile]{Задача 3}{Решение 2/3}
+\lstinputlisting[firstline=25,lastline=52]{src/av3/z3.cpp}
+\end{frame}
+
+\begin{frame}[fragile]{Задача 3}{Решение 3/3}
+\lstinputlisting[firstline=53]{src/av3/z3.cpp}
+\end{frame}
+
+\begin{frame}[fragile]{Задача 4}{Класа за комплексни броеви}
+\lstinputlisting[lastline=21]{src/av3/z4.cpp}
+\end{frame}
+
+\section{Преоптоварување оператори}
+
+\begin{frame}[fragile]{Задача 4}{Преоптоварување на оператори
+\texttt{+=, -=, *=, /=}}
+\lstinputlisting[firstline=22,lastline=43]{src/av3/z4.cpp}
+\end{frame}
+
+\begin{frame}[fragile]{Задача 4}{Преоптоварување на оператори
+\texttt{+, -, *, /}}
+\lstinputlisting[firstline=61,lastline=76]{src/av3/z4.cpp}
+\end{frame}
+
+\begin{frame}[fragile]{Задача 4}{Преоптоварување на оператори
+\texttt{<<, >>}}
+\lstinputlisting[firstline=44,lastline=59]{src/av3/z4.cpp}
+\end{frame}
+
+\begin{frame}[fragile]{Задача 4}{Главна функција}
+\lstinputlisting[firstline=77]{src/av3/z4.cpp}
+\end{frame}

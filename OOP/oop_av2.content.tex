@@ -1,0 +1,652 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Content starts here %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Вовед}
+
+\begin{frame}{Вовед}
+\begin{itemize}
+  \item C++ вклучува многу карактеристики на C јазикот дополнети со дополнителни
+механизми за објектно-ориентирано програмирање (ООП)
+\item Јазикот C++ е развиен во лабораториите на Bell и во почетокот бил наречен
+„С со класи“
+\item Името С++ вклучува во себе операција за зголемување на јазикот С (++) и
+укажува на тоа дека С++ е верзија на С со проширени можности
+\item C++ компајлерот може да се користи и за преведување на C програми
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]{Влез/Излез текови во C++ \texttt{<iostream>}}
+Во С++ за работа со
+влезно/излезните текови наместо функциите \texttt{printf} и \texttt{scanf} ги
+користиме наредбите \texttt{cout <<} и \texttt{cin >>}.
+\begin{exampleblock}{Пример}
+\begin{lstlisting}
+printf("Vnesi nova vrednost: ");
+scanf("%d", &vred);
+printf("Novata vrednost e: %d\n", vred);
+\end{lstlisting}
+во С++ се запишува како:
+\begin{lstlisting}
+cout << "Vnesi nova vrednost: ";
+cin >> vred;
+cout << "Novata vrednost e: " << vred << '\n';
+\end{lstlisting}
+При тоа препрорачливо е изолираните '${\backslash n}$' да се заменат со
+'\texttt{endl}':
+\begin{lstlisting}
+cout << "Novata vrednost e: " << vred << endl;
+\end{lstlisting}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Влез/Излез текови во C++ \texttt{<iostream>}}
+За работа со влезно/излезните текови во C++ треба да се вклучи датотеката со
+заглавја \texttt{<iostream>}
+\begin{exampleblock}{Пример}
+\begin{lstlisting}
+#include <iostream>
+using namespace std;
+
+int main() {
+    cout << "Vnesi gi tvoite godini: ";
+    int myAge;
+    cin >> myAge;
+    cout << "Vnesi gi godinite na prijatel: ";
+    int friendsAge;
+    cin >> friendsAge;
+    if (myAge > friendsAge)
+        cout << "Ti se postar.\n";
+    else if (myAge < friendsAge)
+        cout << "Prijatelot e postar.\n";
+    else
+        cout << "Ti i prijatelot imate godini.\n";
+    return 0;
+}
+\end{lstlisting}
+
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Декларација на променливи во C++}
+Променливите во С++ може да се декларираат во било кој дел од програмата сè
+додека нивната декларација е пред употреба на променливата во некоја наредба.
+\begin{exampleblock}{Пример}
+\begin{lstlisting}
+for(int i = 0;  i < 5; i++) 
+    cout << i << endl;
+\end{lstlisting}
+\end{exampleblock}
+Областа на делување на локалните променливи почнува од декларацијата и се
+протега до крајот на блокот во кој припаѓа означен со \texttt{\}}. Декларација
+не може да се врши во делот за услов кај структурите за повторување
+\texttt{while}, \texttt{do/while}, \texttt{for} или кај \texttt{if}.
+\end{frame}
+
+\begin{frame}[fragile]{\texttt{inline} функции}
+\begin{scriptsize}
+При секој стандарден повик на функција се троши дополнително време во процесот
+на повикување на функцијата. Затоа во C++ при дефинирањето на мали и едноставни
+функции може да се употреби клучното зборче \texttt{inline} кое што наместо
+повик кон функцијата на местото каде што треба да се повика го вметнува самиот
+код на функцијата со што се избегнува дополнителното време при повикување на
+функцијата.
+\end{scriptsize}
+\begin{exampleblock}{Пример функција за пресметување на волумен на коцка}
+\begin{lstlisting}
+#include <iostream>
+using namespace std;
+inline float cube(const float s) {
+    return s * s * s;
+}
+int main() {
+    cout << "Stranata na kockata: ";
+    float strana;
+    cin >> strana;
+    cout << "Volumenot na kocka so strana " << strana << " e: " << cube(strana)
+            << endl;
+    return 0;
+}
+\end{lstlisting}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}{Дополнителни клучни зборови во C++}
+\begin{center}
+    \begin{tabular}{l l l}
+        \texttt{asm} & \texttt{explicit} & \texttt{operator}  \\
+        \texttt{catch} & \texttt{friend} & \texttt{private} \\
+        \texttt{class} & \texttt{inline} & \texttt{protected} \\ 
+        \texttt{const\_cast} & \texttt{mutable} & \texttt{public} \\ 
+        \texttt{delete} & \texttt{new} & \texttt{reinterpret\_cast} \\
+        \texttt{dynamic\_cast} & \texttt{namespace} & \texttt{static\_cast} \\ 
+        \texttt{template} & \texttt{throw} & \texttt{using} \\
+        \texttt{this} & \texttt{try} & \texttt{virtual}
+    \end{tabular}
+\end{center}    
+\end{frame}
+
+\begin{frame}[fragile]{\texttt{typedef}}
+Користење на \texttt{typedef} е дозволено, но не и неопходно при дефинирање на структури,
+унии или набројувачки множества (\texttt{enum}) во C++.
+\begin{exampleblock}{Пример}
+\begin{lstlisting}
+#include <iostream>
+#include <cstring>
+using namespace std;
+struct Person {
+    char ime[80], adresa[90];
+    double plata;
+};
+int main() {
+    Person Vraboten[50]; // pole so elementi od tip struct Person
+    Person Rakovoditel;
+    strcpy(Rakovoditel.ime,"Aleksandar");
+    cout << "Imeto na rakovoditelot e" << Rakovoditel.ime << endl;
+    return 0;
+}
+\end{lstlisting}
+\end{exampleblock}
+\end{frame}
+
+\section{Функции како членови на структура}
+
+\begin{frame}[fragile]{Функции како членови на структура}{1/3}
+Во C++ е дозволено дефинирање на функција како дел од некоја структура.
+\begin{exampleblock}{Пример}
+\begin{lstlisting}
+struct Person {
+    char ime[80], adresa[80];
+    // deklaracija na funkcijata za pecatenje na imeto i adresata
+    void print(void);
+};
+\end{lstlisting}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}{Функции како членови на структура}{2/3}
+\begin{enumerate}
+  \item Функцијата \texttt{print()} е само декларирана; кодот на функцијата се наоѓа на друго
+место.
+    \item Големината на структурата (sizeof) е определена \textbf{само} од големината на
+податочните елементи. Функциите кои се деклараирани во неа не влијаат на
+нејзината големина. Компајлерот го имплементира ова однесување со тоа што
+функцијата \texttt{print()} е позната само во контекст на структурата \texttt{Person}.
+\item  Пристапот до функција дефинирана како дел од структура е идентичен како и
+пристапот до податочен елемент од структура, т.е. се користи операторот \texttt{(.)}.
+Кога се употребува покажувач кон структура се употребува \texttt{->}. Оваа синтакса
+дозволува да се користи исто име на функција во повеќе структури.
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]{Функции како членови на структура}{3/3}
+Користење на функција како член на структура
+\begin{exampleblock}{Пример}
+\begin{lstlisting}
+#include <iostream>
+using namespace std;
+struct Person {
+    char ime[80], adresa[90];
+    double plata;
+    void printperson();
+};
+void Person::printperson() {
+    cout << "Imeto na vraboteniot e:" << ime << "a, negovata adresa e:"
+            << adresa << endl;
+}
+int main() {
+    Person Rakovoditel;
+    //...fali inicijalizacija
+    Rakovoditel.printperson();
+    return (0);
+}
+\end{lstlisting}
+\end{exampleblock}
+\end{frame}
+
+\section{Референци}
+
+\begin{frame}[fragile]{Референци}{Дефиниција и начин на декларација}
+Референца е нов податочен тип во C++ кој е сличен на покажувач во C но многу по
+безбеден за употреба.
+\begin{exampleblock}{Начин на декларација}
+\begin{lstlisting}
+<Type> & <Name>
+\end{lstlisting}
+\end{exampleblock}
+
+\begin{exampleblock}{Пример}
+\begin{lstlisting}
+int A = 5;
+int& rA = A;
+\end{lstlisting}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Референци}{Разлики и сличности со покажувачи}
+Референците во C++ се разликуваат од покажувачите во следниве разлики:
+\begin{enumerate}
+  \item Не може да се пристапи директно на референцата откако ќе се дефинира,
+  секое пристапување до неа е всушност пристапување до објектот/променливата кон
+  која референцира.
+  \item Отакако еднаш ќе се инцијализира не може да се промени да референцира
+  кон друг објект/променлива.
+  \item Не може да бидат NULL (да не референцираат кон ништо).
+  \item Oтакако ќе се декларираат мораат веднаш да се иницијализираат
+\end{enumerate}
+\end{frame}
+
+\begin{frame}[fragile]{Референци}{Употреба}
+Една од најважните употреби на референците е при пренос на аргументи во функции.
+\begin{exampleblock}{Пример}
+\begin{lstlisting}
+int swap(int &a, int &b) {
+    a += b;
+    b = a - b;
+    a -= b;
+}
+int main() {
+    int x = 10;
+    int y = 15;
+    swap(x, y);
+    // x = 15, y = 10
+    return 0;
+}
+\end{lstlisting}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}[fragile]{Референци}{Пример аргументи референца кон структура}
+\begin{lstlisting}
+// deklaracija na struktura
+struct Person {
+    char ime[80], adresa[90];
+    double plata;
+};
+Person Vraboten[50]; // poli elementi od tip struktura Person 
+// printperson ocekuva referenca do struktura
+void printperson(Person const &p) {
+    cout << "Imeto na vraboteniot e:" << p.ime << "a, negovata adresa e:"
+            << p.adresa << endl;
+}
+// zemi gi podatocite za vraboteniot preku negoviot reden broj
+Person const &getperson(int index) {
+... return (Vraboten[index]); // vrakja referenca
+}
+int main() {
+    Person Rakovoditel;
+    printperson(Rakovoditel); // nema referenca
+    // promenlivata nema da se promeni vo funkcijata
+    printperson(getperson(5)); // se prenesuva referenca
+    return (0);
+}
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Употреба на \texttt{const} наместо \texttt{\#define}}
+Со употреба на \texttt{const} се специфицира дека вредноста на променливата или
+аргументот не смее да се менува. На пример во следниот код наредбата за промена
+на променливата \texttt{ival = 4} ќе врати грешка
+\begin{lstlisting}
+int main() {
+    int const ival = 3;
+    // int konstanta ival e inicijalizirana na 3
+    ival = 4; // vrakja error message
+    return (0);
+}
+\end{lstlisting}
+За разлика од C, во C++ променливите кои се дефинирани како константи може да
+употребуваат при спецификација на големината на поле.
+\begin{lstlisting}
+int const size = 20;
+char buffer[size]; // pole od 20 znaci
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Употреба на \texttt{const} со покажувачи}
+\begin{lstlisting}
+char const *buf;
+\end{lstlisting}
+\texttt{buf} е покажувач кон знаци кои се дефинирани како константи, т.е. не смеат да се
+менуваат, додека покажувачот \texttt{buf} смее да се менува. Следствено, buf++ е
+дозволена, а *buf = 'а' е недозволена операција.\\
+За разлика од претходната дефиниција, наредбата
+\begin{lstlisting}
+char *const buf;
+\end{lstlisting}
+дефинира константен покажувач кој не смее да се менува, но податокот од типот
+знак кон кој покажува \texttt{buf} смее да се менува.\\ 
+И конечно,
+\begin{lstlisting}
+char const *const buf;
+\end{lstlisting}
+означува дека ниту покажувачот ниту податокот кон кој покажува тој не смеат да
+се променат.
+\end{frame}
+
+\begin{frame}[fragile]{Употреба на const со покажувачи}
+Дефинициите или декларациите во кои се користи зборчето const се читаат
+почнувајќи од името на променливата (односно името на функцијата) кон типот на
+променлива/функција. Следствено, последната наредба се чита како ``\texttt{buf} е
+константен покажувач кон константа знак''.
+\begin{lstlisting}
+#include <iostream>
+using namespace std;
+int main() {
+    char const *buf = "hello";
+    buf++; // prifateno od kompajlerot
+    *buf = 'u'; // ne se prifaka od kompajlerot
+    return (0);
+}
+\end{lstlisting}
+\end{frame}
+
+\section{Простор на имиња - namespace}
+\begin{frame}[fragile]{Простор на имиња - \texttt{namespace}}
+\texttt{namespace} се делови во кодот во кои може да се дефинираат и употребуваат (без
+конфликти) ентитети (променливи, функции, структури, и сл.) со исти имиња како
+постојните стандардно дефинирани или оние кои се јавуваат во друг простор на
+имиња.\\
+Дефиниција на namespace
+\begin{lstlisting}
+namespace ime_na_namespace {
+    // (region za deklariranje entiteti)
+    // deklarirani promenlivi, entiteti i funkcii
+    // strukturi, klasi, vgnezdeni prostori na iminja
+}
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Простор на имиња - \texttt{namespace}}
+\begin{lstlisting}
+#include <iostream> 
+using namespace std; 
+namespace first { int var = 5; } 
+namespace second { double var = 3.1416; } 
+int main () { 
+    cout << first::var << endl; 
+    cout << second::var << endl; 
+    return 0; 
+}
+\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}[fragile]{Простор на имиња - \texttt{namespace}}
+Дефиниција на простор не може да биде во блок (пр: функција), но може да се
+користат декларации на простор со исто име на повеќе места (\texttt{multiple namespace}).
+Тогаш се вели, просторот е отворен (open).
+На пример, ако имаме декларација на \texttt{namespace Moj\_prostor} во
+\texttt{prog1.cpp} и \texttt{prog2.cpp}, тие ќе се обединат во еден простор кој
+ги содржи сите ентитети дефинирани во двата простора.
+\begin{lstlisting}
+// vo prog1.cpp
+namespace Moj_prostor {
+double cos(double argInDegrees) {
+...kod na funkcijata cos
+}
+}
+// vo prog2.cpp
+namespace Moj_prostor {
+double sin(double argInDegrees) {
+...kod na funkcijata sin
+}
+}
+\end{lstlisting}
+\end{frame}
+
+
+\begin{frame}[fragile]{Употреба на \texttt{using}}
+Декларацијата using може да се користи во блок, меѓутоа треба да се внимава да
+нe се дефинираат променливи со исти имиња како имињата на ентитетите од просторот
+кој се декларира со \texttt{using}.
+\begin{lstlisting}
+#include <iostream>
+using namespace std;
+namespace Moj_prostor {
+    int vrednost = 1;
+}
+int main() {
+    using Moj_prostor::vrednost;
+    ...
+    cout << vrednost << endl; // ja koristi Moj_prostor::vrednost
+    int vrednost; // greska: vrednost e veke definirana.
+    return (0);
+}
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Употреба на \texttt{using}}
+\begin{lstlisting}
+#include <iostream> 
+using namespace std; 
+
+namespace first { 
+    int x = 5; int y = 10; 
+} 
+
+namespace second { 
+    double x = 3.1416; double y = 2.7183; 
+}
+ 
+int main () { 
+    using first::x; 
+    using second::y; 
+    cout << x << endl; 
+    cout << y << endl; 
+    cout << first::y << endl; 
+    cout << second::x << endl; 
+    return 0; 
+}
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Употреба на \texttt{using}}
+За разлика од декларативно користење на \texttt{using} каде се наведува ентитетот или
+листата на ентитети кои се преземаат од просторот, може да се употреби наредбата
+using за импортирање на сите ентитети од соодветниот простор.
+\begin{lstlisting}
+#include <iostream> 
+using namespace std; 
+namespace first { 
+    int x = 5; int y = 10; 
+}
+namespace second { 
+    double x = 3.1416; double y = 2.7183; 
+} 
+int main () { 
+    using namespace first; 
+    cout << x << endl;  
+    cout << y << endl; 
+    cout << second::x << endl; 
+    cout << second::y << endl; 
+    return 0; 
+}
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Затворени простори на имиња}
+Дефиниција на ентитет (пр. функција) со исто име како стандардна функција
+имплицира дека стандардната функција не може автоматски да се користи, туку
+треба да се користи \texttt{scope} операторот како во следниот пример:\\
+Пристап до функции со исто име кои припаѓаат на стандардниот и
+новодефиниранот простор на имиња \texttt{\#include <iostream>}
+\begin{lstlisting}
+#include <cmath>
+namespace Moj_prostor {
+double cos(double argInDegrees) {
+...kod na funkcijata cos
+}
+using namespace std;
+int main()
+{
+using Moj_prostor::cos;
+...
+cout << cos(60) // ja koristi funkcijata Moj_prostor::cos()
+<< ::cos(1.5) // ja koristi standardnata cos() funkcija
+<< endl;
+return (0);
+}
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Затворени простори на имиња}
+Простор може да се дефинира без име; тогаш тој е анонимен (затворен) односно
+ентитетите на просторот може да се користат само во програмата во која е
+дефиниран просторот.
+Пристап до ентитети од простор на имиња
+\begin{lstlisting}
+// namespace Moj_prostor e definiran vo sledniot header file:
+#include <Moj_prostor>
+int main() {
+    cout << "Cosinus od 60 stepeni e: " <<
+    Moj_prostor::cos(60) << endl;
+    return (0);
+}
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Затворени простори на имиња}
+\begin{lstlisting}
+#include <iostream> 
+using namespace std;  
+namespace first { 
+    int x = 5; 
+} 
+
+namespace second { 
+    double x = 3.1416; 
+} 
+
+int main () { 
+{ 
+    using namespace first; 
+    cout << x << endl; 
+} 
+
+{ 
+    using namespace second; 
+    cout << x << endl; 
+} 
+
+return 0; 
+}
+
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Вгнездени простори на имиња (nested namespaces)}
+\begin{lstlisting}
+namespace Moj_prostor {
+namespace Virtual {
+void *pointer;
+}
+}
+\end{lstlisting}
+Пристап до вгнезден ентитет може да се напише на следните начини:\\
+1. Со користење на scope операторот за целосна референца
+\begin{lstlisting}
+int main() {
+    Moj_prostor::Virtual::pointer = 0;
+    return (0);
+}
+\end{lstlisting}
+
+2. Користење на \texttt{using}-декларација за \texttt{Moj\_prostor::Virtual}
+\begin{lstlisting}
+. . .
+using Moj_prostor::Virtual;
+int main() {
+    Virtual::pointer = 0;
+    return (0);
+}
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Вгнездени простори на имиња (nested namespaces)}
+3. Користење на \texttt{using}-декларација за \texttt{Moj\_prostor::Virtual::pointer}
+\begin{lstlisting}
+...
+using Moj_prostor::Virtual::pointer;
+int main() {
+    pointer = 0;
+    return (0);
+}
+\end{lstlisting}
+4. Користење на \texttt{using} – наредбата 
+\begin{lstlisting}
+using namespace Moj_prostor::Virtual;
+int main() {
+    pointer = 0;
+    return (0);
+}
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Вгнездени простори на имиња (nested namespaces)}
+Две одвоени \texttt{using}-наредби не се дозволени
+\begin{lstlisting}
+using namespace Moj_prostor;
+using namespace Virtual;
+int main() {
+    pointer = 0;
+    return (0);
+}
+\end{lstlisting}
+5. Комбинација на \texttt{using}-наредба и \texttt{using}-деклрација
+\begin{lstlisting}
+using namespace Moj_prostor;
+using Virtual::pointer;
+int main() {
+    pointer = 0;
+    return (0);
+}
+\end{lstlisting}
+\end{frame}
+
+\begin{frame}[fragile]{Нова синтакса за кастирање}
+Во C се употребуваше следната синтакса за кастирање
+\begin{lstlisting}
+(typename)expression
+(float) broitel;
+\end{lstlisting}
+Во C++ иако е дозволена и претходната нотација, новиот начин на нотација е:
+\begin{lstlisting}
+typename(expression)
+float(broitel);
+\end{lstlisting}
+Во C++ се воведуваат 4 нови видови кастирање:
+\begin{enumerate}
+  \item \texttt{static\_cast<type>(expression)} - стандардно кастирање за
+  конверзија на еден тип во друг
+  \item \texttt{const\_cast<type>(expression)} - се користи за модифицирање на типот на
+  константи
+  \item \texttt{reintrepret\_cast<type>(expression)} - се користи за промена на
+  интерпретација на информацијата
+  \item \texttt{dynamic\_cast<type>(expression)} - поврзан со polymorphism
+ 
+\end{enumerate}
+\end{frame}
+
+\section{Класи}
+\begin{frame}[fragile]{Дефинирање на класа и default конструктор}
+\begin{lstlisting}
+class kompleksni {
+private:
+    double realen;
+public:
+    double imag;
+};
+
+int main(){
+    kompleksni broj;
+    //broj.realen = 2.5;
+    broj.imag = 1.2;
+}   
+\end{lstlisting}
+За да може да се инстанцира објект во C++, автоматски се креира конструктор што би бил дефиниран вака
+\begin{lstlisting}
+    kompleksni::kompleksni(){}
+\end{lstlisting}
+Се повикува без аргументи и во истиот не се дефинираат аргументи, дури ни со подразбирливи вредности
+
+\end{frame}

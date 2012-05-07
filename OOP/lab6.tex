@@ -1,0 +1,64 @@
+\documentclass[12pt,a4paper]{exam}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{ucs}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,bulgarian]{babel}
+\usepackage{listings}
+\usepackage{color}
+\definecolor{lightgrey}{rgb}{0.9,0.9,0.9}
+\usepackage[usenames,dvipsnames]{xcolor}
+\input{code_style_labC.tex}
+
+\begin{document}
+\pagestyle{headandfoot}
+\header{\textbf{ФИНКИ\\Објектно ориентирано
+програмирање}}{}{\large{\textbf{Лабораториска вежба 6}}}
+\headrule
+\cfoot{Страна \thepage}
+\begin{center}
+\Large{\textbf{Динамичка алокација на меморија и композиција}}
+\end{center}
+\begin{questions}
+
+\question
+Да се напише класа \texttt{Polinom} во која се чуваат коефициентите пред
+членовите на еден полином (поле од float вредности) и бројот на членови на
+полиномот (пр. $1.0x^2 + 2.6x - 5.0$). Бројот на членови ќе биде 3 а полето
+ќе ги содржи елементите $1.0, 2.6, -5.0$). Меморијата потребна за чување на
+коефициентите се алоцира динамички. Да се преоптоварат операторите $+$ (за
+собирање на два полиноми), $-$ (за одземање на два полиноми), $*$ (за множење
+на два полиноми), = (операторот за доделување), $>>$ (за внесување на
+вредностите на коефициентите), $<<$ (за печатење на полиномот во формат: $1.0x^2
++ 2.6x^1 - 5.0x^0)$. Да се напишат конструкторот, деструкторот и copy конструкторот.
+
+\begin{lstlisting}
+#include <iostream>
+using namespace std;
+class Polinom {
+// ... vasiot kod ovde ...
+};
+int main() {
+    Polinom m(3), n(4, 2.7, 3.0), k;
+    cin >> m;
+    cout << "M = " << m << endl;
+    cin >> n;
+    cout << "N = " << n << endl;
+    Polinom o = m;
+    cout << "O = " << o << endl;
+    k = o;
+    cout << "K = " << k << endl;
+    o = m + n;
+    cout << "M + N = " << o << endl;
+    o = m - n;
+    cout << "M - N = " << o << endl;
+    o = m * n;
+    cout << "M * N = " << o << endl;
+    return 0;
+}
+\end{lstlisting}
+
+\end{questions}
+\end{document}

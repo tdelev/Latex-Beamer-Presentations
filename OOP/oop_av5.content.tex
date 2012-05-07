@@ -1,0 +1,149 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Content starts here %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Наследување}
+
+\begin{frame}[fragile]{Наследување}
+\begin{lstlisting}
+class ime_izvedena : pristap ime_osnovna {
+    // definicija i implementacija na klasata
+};
+\end{lstlisting}
+\begin{exampleblock}{Пример наследување со \texttt{public} пристап}
+\begin{lstlisting}
+class Osnovna {
+private:
+    int a;
+public:
+    Osnovna(int a) { this->a = a; }
+    Osnovna() {}
+}
+class Izvedena : public Osnovna {
+private:
+    int b;
+public:
+    Izvedena(int a, int b) : Osnovna(a) {
+        this->b = b;
+    }
+}
+\end{lstlisting}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}{Задача 1}{Наследување}
+Да се напише класа за точка во дводимензионален (2Д) координатен систем. Од оваа
+класа да се изведе класа за точка во тродимензионален (3Д) кооридинатен систем.
+\end{frame}
+
+\begin{frame}[fragile]{Задача 1}{Решение}
+\lstinputlisting[lastline=25]{src/av5/z1.cpp}
+\end{frame}
+
+\begin{frame}{Задача 2}{Наследување}
+Да се напише класа која ќе опишува банкарска сметка. За сметката се чуваат
+информации за бројот, името на сопственикот, како и салдото (моменталната
+состојба). За оваа класа да се имплементираат методи за додавање и повлекување
+средства од сметката, како метод кој пачати на екран преглед на сметката.
+Доколку сопственикот нема доволно средства при повлекувањето се печати соодветна порака.\\
+Од оваа класа да се изведе класа за банкарска сметка со дозволен максимален
+заем на кој се пресметува соодветна камата. За оваа класа да се преоптоварат
+методите за повлекување средства и печатање преглед на сметката.
+\end{frame}
+
+\begin{frame}[fragile]{Задача 2}{Решение 1/4}
+\lstinputlisting[lastline=15]{src/av5/z2.cpp}
+\end{frame}
+
+\begin{frame}[fragile]{Задача 2}{Решение 2/3}
+\lstinputlisting[firstline=16,lastline=34]{src/av5/z2.cpp}
+\end{frame}
+
+\begin{frame}[fragile]{Задача 2}{Решение 3/4}
+\lstinputlisting[firstline=35,lastline=63]{src/av5/z2.cpp}
+\end{frame}
+
+\begin{frame}[fragile]{Задача 2}{Решение 4/4}
+\lstinputlisting[firstline=64]{src/av5/z2.cpp}
+\end{frame}
+
+\begin{frame}{Пример 1/4}{\texttt{protected} наследување и \texttt{protected} членови на
+класата}
+\lstinputlisting[lastline=24]{src/av5/ex1.cpp}
+\end{frame}
+
+\begin{frame}[fragile]{Пример 2/4}{\texttt{protected} наследување и \texttt{protected} членови на
+класата}
+\lstinputlisting[firstline=25,lastline=39]{src/av5/ex1.cpp}
+\end{frame}
+
+\begin{frame}[fragile]{Пример 3/4}{\texttt{protected} наследување и
+\texttt{protected} членови на класата}
+\lstinputlisting[firstline=40,lastline=58]{src/av5/ex1.cpp}
+\end{frame}
+
+\begin{frame}[fragile]{Пример 4/4}{\texttt{protected} наследување и
+\texttt{protected} членови на класата}
+\lstinputlisting[firstline=59]{src/av5/ex1.cpp}
+\begin{tikzpicture}[overlay,remember picture]
+        \pgftransformshift{\pgfpointanchor{current page}{center}}
+        \node[
+            ellipse callout,
+            draw=red,
+            thick,
+            fill=yellow,
+            decorate,
+            callout relative pointer=(195:3.5cm),
+            text width=0.15\textwidth,
+            align=center,
+            anchor=center
+            ] at (3.5,0) {Грешка};
+\end{tikzpicture}
+\begin{tikzpicture}[overlay,remember picture]
+        \pgftransformshift{\pgfpointanchor{current page}{center}}
+        \node[
+            ellipse callout,
+            draw=red,
+            thick,
+            fill=yellow,
+            decorate,
+            callout relative pointer=(180:3cm),
+            text width=0.15\textwidth,
+            align=center,
+            anchor=center
+            ] at (3.5,-2) {Грешка};
+    \end{tikzpicture}
+\end{frame}
+
+\begin{frame}{Задача 3}
+Да се напише класа за работа со функција \texttt{f(x, y)} претставена како множество од
+точки во 3Д простор (динамички алоцирана меморија за објекти од класата \texttt{Tocka3D}
+која исто така треба да се имплементира). 
+
+Функцијата f треба да  ги поддржува оперторите \texttt{+=} за додавање нова точка во
+множеството точки, \texttt{<<}  за печатење на функцијата \texttt{f} и \texttt{[i]}  за промена  на 
+точката  на  позиција \texttt{i}. Исто така, класата треба  да  има  метод 
+кој ќе врши интерполација на точките од функцијата и ќе ја враќа новодобиената  
+интерполирана функција.
+
+\end{frame}
+
+\begin{frame}[fragile]{Задача 3}{Решение 1/5}
+\lstinputlisting[lastline=28]{src/av5/z3.cpp}
+\end{frame}
+
+\begin{frame}[fragile]{Задача 3}{Решение 2/5}
+\lstinputlisting[firstline=29,lastline=50]{src/av5/z3.cpp}
+\end{frame}
+
+\begin{frame}[fragile]{Задача 3}{Решение 3/5}
+\lstinputlisting[firstline=51,lastline=79]{src/av5/z3.cpp}
+\end{frame}
+
+\begin{frame}[fragile,shrink=10]{Задача 3}{Решение 4/5}
+\lstinputlisting[firstline=80,lastline=113]{src/av5/z3.cpp}
+\end{frame}
+
+\begin{frame}[fragile]{Задача 3}{Решение 5/5}
+\lstinputlisting[firstline=114]{src/av5/z3.cpp}
+\end{frame}

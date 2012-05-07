@@ -1,0 +1,108 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Content starts here %%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Динамичка алокација на меморија}
+
+\begin{frame}{Задача 1}{Класа за динамичко поле}
+Да се напише класа за работа со еднодимензионални полиња од целобројни елементи.
+За полето се чуваат информации за вкупниот капцитет на полето, тековниот број на
+елементи. Резервацијата на меморијата да се врши динамички. 
+Да се преоптоварат следните оператори 
+\begin{itemize}
+  \item \texttt{[]} за пристап до елемент и промена на вредноста на
+  елемент од полето
+  \item \texttt{+=} за додавање нови броеви во полето и притоа ако е исполнет
+  капацитетот на полето да се зголеми за 100\%.
+\end{itemize}
+Да се напише главна програма каде ќе се инстанцира објект од класата и во него
+ќе се внесат N броеви од тастатура и потоа да се испечатат елементите на полето,
+неговиот капацитет и вкупниот број на елементи.
+\end{frame}
+
+\begin{frame}[fragile]{Задача 1}{Решение 1/3}
+\lstinputlisting[lastline=22]{src/av4/z1.cpp}
+\end{frame}
+
+\begin{frame}[fragile,shrink=10]{Задача 1}{Решение 2/3}
+\lstinputlisting[firstline=23,lastline=52]{src/av4/z1.cpp}
+\end{frame}
+
+\begin{frame}[fragile,shrink=10]{Задача 1}{Решение 3/3}
+\lstinputlisting[firstline=52]{src/av4/z1.cpp}
+\end{frame}
+
+\section{Композиција}
+
+\begin{frame}{Задача 2}{Композиција}
+Да се напише класа за работа со веб сервери (\texttt{WebServer}). За секој веб
+сервер се чува:
+\begin{itemize}
+  \item неговото име (max 30 знаци)
+  \item листа од веб страници (динамичка низа објекти од класата
+  \texttt{WebPage}).
+\end{itemize}
+За секоја веб страница се чува:
+\begin{itemize}
+  \item url (max 100 знаци)
+  \item содржина (динмички алоцирана низа од знаци). 
+\end{itemize}
+За класата \texttt{WebServer} да се преотоварат операторите:
+\begin{itemize}
+  \item \texttt{+=} за додавање нова веб страница во серверот
+  \item \texttt{-=} за бришење на веб страница од веб серверот. 
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]{Задача 2}{Решение 1/5}
+\lstinputlisting[lastline=22]{src/av4/z2.cpp}
+\end{frame}
+
+\begin{frame}[fragile]{Задача 2}{Решение 2/5}
+\lstinputlisting[firstline=23,lastline=39]{src/av4/z2.cpp}
+\end{frame}
+
+\begin{frame}[fragile,shrink=10]{Задача 2}{Решение 3/5}
+\lstinputlisting[firstline=40,lastline=70]{src/av4/z2.cpp}
+\end{frame}
+
+\begin{frame}[fragile]{Задача 2}{Решение 4/5}
+\lstinputlisting[firstline=71,lastline=100]{src/av4/z2.cpp}
+\end{frame}
+
+\begin{frame}[fragile]{Задача 2}{Решение 5/5}
+\lstinputlisting[firstline=101]{src/av4/z2.cpp}
+\end{frame}
+
+\begin{frame}{Задача 3}{Композиција}
+Да се напише класа \texttt{Datum}, во која ќе се чуваат ден, месец и година (цели
+броеви).\\
+Да се напише класа \texttt{Vraboten}, за кој се чува име (не повеќе од 100
+знаци) и датум на раѓање (објект од Datum).\\ 
+Да се напише класа Firma, во која се чува име на фирмата (не повеќе од 100
+знаци) и низа од вработени (динамичи алоцирана низа од објекти од Vraboten).
+Да се преоптовари операторот += за додавање на вработен во фирмата.
+За оваа класа да се имплементираат метод кој ќе ги печати
+сите вработени во фирмата и метод кој ќе го пронајде и испечати најмладиот вработен.
+\end{frame}
+
+\begin{frame}[fragile]{Задача 3}{Решение 1/5}
+\lstinputlisting[lastline=25]{src/av4/z3.cpp}
+\end{frame}
+
+\begin{frame}[fragile]{Задача 3}{Решение 2/5}
+\lstinputlisting[firstline=27,lastline=45]{src/av4/z3.cpp}
+\end{frame}
+
+\begin{frame}[fragile]{Задача 3}{Решение 3/5}
+\lstinputlisting[firstline=46,lastline=75]{src/av4/z3.cpp}
+\end{frame}
+
+\begin{frame}[fragile]{Задача 3}{Решение 4/5}
+\lstinputlisting[firstline=76,lastline=105]{src/av4/z3.cpp}
+\end{frame}
+
+\begin{frame}[fragile]{Задача 3}{Решение 5/5}
+\lstinputlisting[firstline=106]{src/av4/z3.cpp}
+\end{frame}
+
