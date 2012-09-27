@@ -1,21 +1,42 @@
-\documentclass[12pt,a4paper]{book}
-\usepackage{amsmath}
-\usepackage{amsfonts}
-\usepackage{amssymb}
+\documentclass[11pt,twoside,a4paper]{article}
+\usepackage{beamerarticle}
 \usepackage[T2A]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{listings}
-\usepackage{color}
+\usepackage{verbatim}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
 
-\lstset{language=C,captionpos=b,
-tabsize=4,frame=lines,
-basicstyle=\ttfamily,
-keywordstyle=\color{blue},
-commentstyle=\color{lightgray},
-stringstyle=\color{red},
-breaklines=true,showstringspaces=false}
+\input{code_style.tex}
+
+\title{Решени задачи од аудиториски вежби по\\ Концепти за развој на софтвер}
+\author{}
 
 \begin{document}
-\section{}
-test document
+\renewcommand*\contentsname{Содржина}
+\maketitle
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\input{krs_av2.main.tex}
+
+\input{krs_av3.main.tex}
+
+\input{krs_av4.main.tex}
+
+\input{krs_av5.main.tex}
+
+\input{krs_av6.main.tex}
+
+\input{krs_av7.main.tex}
+
+\input{krs_av8.main.tex}
+
+\input{krs_av9.main.tex}
+
+\input{krs_av10.main.tex}
+
 \end{document}

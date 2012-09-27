@@ -13,6 +13,16 @@
   \item \texttt{strcat} - додава една текстуална низа на крајот на друга
   \item \texttt{strncat} - додава n бајти од една текстуална низа во друга
 \end{itemize}
+Функции за менување на меморијата
+\begin{itemize}
+  \item \texttt{memset} - пополнува низа со одреден бајт
+\end{itemize}
+Функции за претворање на низи од знаци во броеви
+\begin{itemize}
+  \item \texttt{atof} - претвора низа од знаци во децимален број
+  \item \texttt{atoi} - претовра низа од знаци во цел број 
+\end{itemize}
+
 \end{frame}
 
 \begin{frame}[shrink=10]{Функции за работа со текстуални
@@ -225,10 +235,12 @@ kalabalak
 големи бувки при споредбата.
 \end{scriptsize}
 \begin{exampleblock}{Пример реченици палиндроми}
-Јadenje i pienje daj
+\begin{scriptsize}
+Јadenje i pienje daj\\
 A man, a plan, a canal, Panama\\
 Never odd or even\\
 Rise to vote sir
+\end{scriptsize}
 \end{exampleblock}
 
 \end{frame}
@@ -262,50 +274,6 @@ int main() {
         printf("e palindrom.");
     else
         printf("ne e palindrom.");
-    return 0;
-}
-\end{lstlisting}
-\end{frame}
-
-\begin{frame}{Задачa 6}
-Да се напише функција која за дадена текстуална низа ќе одреди дали е  доволно
-сложена да биде лозинка. Секоја лозинка мора да има барем една буква, барем еден
-број и барем еден специјален знак.
-\begin{exampleblock}{Пример}
-\texttt{zdr@v0!} e валидна лозинка.\\
-\texttt{zdravo} не е валидна лозинка.
-\end{exampleblock}
-\end{frame}
-
-\begin{frame}[fragile]{Задачa 6}{Решение}
-\begin{lstlisting}
-#include <stdio.h>
-#include <ctype.h>
-#include <string.h>
-#define MAX 100
-
-int eLozinka(char *str) {
-    int bukvi = 0, brojki = 0, spec = 0;
-    for(; *str; str++) {
-        if (isalpha(*str))
-            bukvi++;
-        else if (isdigit(*str))
-            brojki++;
-        else
-            spec++;
-    }
-    return (bukvi > 0 && brojki > 0 && spec > 0);
-}
-
-int main() {
-    char s[MAX];
-    printf("Vnesete string: ");
-    gets(s);
-    printf("Vneseniot string %s ", s);
-    if (eLozinka(s))
-        printf("moze da bide lozinka.");
-    else
-        printf("ne moze da bide lozinka.");
     return 0;
 }
 \end{lstlisting}

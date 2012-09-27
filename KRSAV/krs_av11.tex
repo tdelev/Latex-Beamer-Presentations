@@ -5,9 +5,10 @@
 \usepackage{ucs}
 \usepackage[T2A]{fontenc}
 \usepackage[utf8]{inputenc}
+\usepackage[english,bulgarian]{babel}
 \usepackage{verbatim}
 \usepackage{listings}
-\usepackage{fancybox} 
+\renewcommand\mathfamilydefault{\rmdefault}
 %\renewcommand*\ttdefault{lcmtt}
 
 \pdfinfo
@@ -18,8 +19,8 @@
 }
 
 
-\title[АВ5]{Аудиториски вежби 5}
-\subtitle{\texttt{for while} циклуси}
+\title[АВ11]{Аудиториски вежби 11}
+\subtitle{Датотеки}
 \author{Концепти за развој на софтвер}
 \date{}
 \pgfdeclareimage[width=0.6\paperwidth]{finki_logo}{finki_name}
@@ -30,9 +31,7 @@
 \begin{document}
 
 \frame[plain]{\titlepage}
-
 \input{sections.tex}
-\input{krs_av5.main.tex}
+\input{krs_av11.main.tex}
 \input{end_frame.tex}
-
 \end{document}

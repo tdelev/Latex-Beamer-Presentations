@@ -1,2 +1,47 @@
 \documentclass{beamer}
+\usetheme{FINKI}
+\usepackage{thumbpdf}
+\usepackage{wasysym}
+\usepackage{ucs}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+\usepackage{verbatim}
+\usepackage{listings}
+\usepackage{fancybox}
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+
+\pdfinfo
+{
+  /Title       (AV4)
+  /Creator     (Tomche Delev)
+  /Author      (Tomche Delev)
+}
+
+
+\title[АВ4]{Аудиториски вежби 4}
+\subtitle{Контролни структури за избор \texttt{if/else}}
+\author{Концепти за развој на софтвер}
+\date{}
+\pgfdeclareimage[width=0.6\paperwidth]{finki_logo}{finki_name}
+\titlegraphic{\pgfuseimage{finki_logo}}
+
+
+\newcommand<>{\highlighton}[1]{%
+  \alt#2{\structure{#1}}{{#1}}
+}
+
+\newcommand{\icon}[1]{\pgfimage[height=1em]{#1}}
+
+\input{code_style_tiny.tex}
+
+\begin{document}
+
+\frame[plain]{\titlepage}
+
+\input{sections.tex}
 \input{krs_av4.main.tex}
+\input{end_frame.tex}
+
+\end{document}

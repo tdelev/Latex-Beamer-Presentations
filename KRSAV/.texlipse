@@ -1,13 +1,13 @@
 #TeXlipse project settings
-#Thu Dec 08 04:07:57 CET 2011
+#Thu Sep 27 23:27:31 CEST 2012
 builderNum=2
 outputDir=out
 makeIndSty=
 bibrefDir=
 outputFormat=pdf
 tempDir=tmp
-mainTexFile=krs_av9.tex
-outputFile=krs_av9.pdf
+mainTexFile=krs_av2.tex
+outputFile=krs_av2.pdf
 langSpell=en
 markDer=true
 srcDir=

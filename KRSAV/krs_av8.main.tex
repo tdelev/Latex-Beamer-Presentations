@@ -1,78 +1,4 @@
 
-\usetheme{FINKI}
-\usepackage{thumbpdf}
-\usepackage{wasysym}
-\usepackage{ucs}
-\usepackage[T2A]{fontenc}
-\usepackage[utf8]{inputenc}
-\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
-\usepackage{verbatim}
-\usepackage{listings}
-\renewcommand\mathfamilydefault{\rmdefault}
-%\renewcommand*\ttdefault{lcmtt}
-
-\pdfinfo
-{
-  /Title       (KRS)
-  /Creator     (TeX)
-  /Author      (Tomche Delev)
-}
-
-
-\title[АВ8]{Аудиториски вежби 8}
-\subtitle{Рекурзивни функции}
-\author{Концепти за развој на софтвер}
-\date{}
-\pgfdeclareimage[width=0.6\paperwidth]{finki_logo}{finki_name}
-\titlegraphic{\pgfuseimage{finki_logo}}
-
-
-
-\begin{document}
-
-\frame[plain]{\titlepage}
-
-%Automatic table of contents
-%\section*{}
-%\begin{frame}
-%  \frametitle{Содржина}
-%  \tableofcontents[section=1,hidesubsections]
-%\end{frame}
-
-\AtBeginSection[]
-{
-  \frame<handout:0>
-  {
-    \frametitle{Содржина}
-    \tableofcontents[currentsection,hideallsubsections]
-  }
-}
-
-\AtBeginSubsection[]
-{
-  \frame<handout:0>
-  {
-    \frametitle{Outline}
-    \tableofcontents[sectionstyle=show/hide,subsectionstyle=show/shaded/hide]
-  }
-}
-
-\newcommand<>{\highlighton}[1]{%
-  \alt#2{\structure{#1}}{{#1}}
-}
-
-\newcommand{\icon}[1]{\pgfimage[height=1em]{#1}}
-
-\lstset{language=C,captionpos=b,
-tabsize=4,frame=lines,
-basicstyle=\tiny\ttfamily,
-keywordstyle=\color{blue},
-%numbers=left,
-%numberstyle=\tiny,
-commentstyle=\color{lightgray},
-stringstyle=\color{violet},
-breaklines=true,showstringspaces=false}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%% Content starts here %%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -229,9 +155,9 @@ int main() {
 број.
 \begin{exampleblock}{Пример}
 \begin{verbatim}
-sumDigits(126) → 9
-sumDigits(49) → 13
-sumDigits(12) → 3
+sumDigits(126) -> 9
+sumDigits(49) -> 13
+sumDigits(12) -> 3
 \end{verbatim}
 \end{exampleblock}
 \pause
@@ -250,9 +176,9 @@ int sumDigits(int n) {
 од неа таа се брои двојно, така 8818 дава 4.
 \begin{exampleblock}{Пример}
 \begin{verbatim}
-count8(8) → 1
-count8(818) → 2
-count8(8818) → 4
+count8(8) -> 1
+count8(818) -> 2
+count8(8818) -> 4
 \end{verbatim}
 \end{exampleblock}
 \pause
@@ -391,14 +317,3 @@ int minElement(int niza[], int n) {
 \end{lstlisting}
 \end{frame}
 
-\begin{frame}{Материјали}{}
-	Предавања, аудиториски вежби, соопштенија\\
-	\href{http://courses.finki.ukim.mk/}{\textbf{courses.finki.ukim.mk}}
-	\vfill
-	Изворен код на сите примери и задачи\\
-	\href{http://bitbucket.org/tdelev/finki-krs/}{\textbf{bitbucket.org/tdelev/finki-krs}}
-	\vfill
-	{\Huge Прашања ?}
-\end{frame}
-
-\end{document}
